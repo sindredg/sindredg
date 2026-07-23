@@ -1,6 +1,6 @@
 **About**
 
-The repos below are hands-on labs: real enviroments, tested with both positive and negative cases and documented. 
+The projects below are real enviroments, tested with both positive and negative cases and documented. 
 Design decisions and tradeoffs are written down, not just the happy path.
 
 ---
