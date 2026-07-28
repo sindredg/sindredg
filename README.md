@@ -1,7 +1,7 @@
 **About**
 
 >The projects below are tested in a real environment and documented.
->They include workflows, architecture overviews, design decisions, tradeoffs,troubleshooting steps
+>They include workflows, architecture overviews, design decisions, tradeoffs, troubleshooting steps
 >and more.
 ---
 
