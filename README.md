@@ -10,7 +10,6 @@
 
 | Project | What it is | Stack |
 | --- | --- | --- |
-| [**Azure–GCP Cross-Cloud Integration**](https://github.com/sindredg/cross-cloud-integration) | **In progress.** | Terraform · Azure · GCP · Active Directory · Blob Storage backend · Entra ID RBAC · BGP/VPN · Azure Arc · Workforce Identity Federation |
 | [**Forest to Cloud: Cross-Region Hybrid Identity Infrastructure**](https://github.com/sindredg/two-site-hybrid-identity) |Two-site Active Directory forest in Azure, synchronised to Entra ID. Hybrid-joined endpoints and users, per-machine LAPS credentials, tiered privileged access enforced by policy, and private networks. Terraform and idempotent PowerShell throughout. | Terraform · Azure · Entra ID · Active Directory · Windows Server · Group Policy · Windows LAPS · PowerShell · Entra Connect Sync · Github Actions |
 | [**Access Control & Identity Governance**](https://github.com/sindredg/Access-Control-and-Identity-Governance) | Governs tenant-wide access and access to in-house applications with Entra ID: Conditional Access, just-in-time administration with PIM, entitlement management and access reviews. | Entra ID · Conditional Access · PIM · FIDO2 · Access Reviews · SSO · SCIM · Microsoft Graph PowerShell |
 | [**Securing AI with MCP Server and RBAC**](https://github.com/sindredg/claude-azure-mcp-rbac-design) | Gives Claude scoped, read-only access to Azure through the Azure MCP Server, with Azure RBAC as the authoritative control and host/server hardening as defense in depth. | Azure MCP Server · Azure RBAC · Service Principal · Claude |
