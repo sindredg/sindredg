@@ -10,7 +10,7 @@
 
 | Project | What it is | Stack |
 | --- | --- | --- |
-| **Azure Container App with Terraform** | **In-progress** | Terraform ·Docker · Nginx · Azure Container Apps · Managed Identity · Log Analytics |
+| [**Azure Container App with Terraform**](https://github.com/sindredg/container-app-in-azure) | **In-progress** | Terraform ·Docker · Nginx · Azure Container Apps · Managed Identity · Log Analytics |
 | [**Forest to Cloud: Cross-Region Hybrid Identity Infrastructure**](https://github.com/sindredg/two-site-hybrid-identity) | Two-site Active Directory forest in Azure, synchronized with Entra ID. Features hybrid-joined endpoints and users, per-machine LAPS credentials, policy-enforced tiered privileged access, and private networks. Built throughout with Terraform and idempotent PowerShell. | Terraform · Azure · Entra ID · Active Directory · Windows Server · Group Policy · Windows LAPS · PowerShell · Entra Connect Sync · GitHub Actions |
 | [**Access Control & Identity Governance**](https://github.com/sindredg/Access-Control-and-Identity-Governance) | Governs tenant-wide access and access to in-house applications with Entra ID: Conditional Access, just-in-time administration with PIM, entitlement management and access reviews. | Entra ID · Conditional Access · PIM · FIDO2 · Access Reviews · SSO · SCIM · Microsoft Graph PowerShell |
 | [**Securing AI with MCP Server and RBAC**](https://github.com/sindredg/claude-azure-mcp-rbac-design) | Gives Claude scoped, read-only access to Azure through the Azure MCP Server, with Azure RBAC as the authoritative control and host/server hardening as defense in depth. | Azure MCP Server · Azure RBAC · Service Principal · Claude |
