@@ -8,9 +8,9 @@
 
 ## Platform & delivery
 
-### [Golden Hour](https://github.com/sindredg/aca-prod): [live web app](https://ca-aca-prod-production.yellowglacier-15588c53.norwayeast.azurecontainerapps.io)
+### [Golden Hour: Container App](https://github.com/sindredg/aca-prod) - [live](https://ca-aca-prod-production.yellowglacier-15588c53.norwayeast.azurecontainerapps.io)
 
-A sunrise/set, fullmoon and eclipse planner running in production, and the delivery pipeline that puts
+A sunrise/set, full moon and eclipse planner currently running, and the delivery pipeline that puts
 it there. Three Terraform states split by who may apply them: the pipeline holds Contributor on the RG scope,
 four workload identities trusted on one OIDC subject; images deploy by digest behind an approval gate.
 
