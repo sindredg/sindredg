@@ -1,31 +1,28 @@
 **About**
 
 > Infrastructure and identity work, built in real environments and documented
-> with the decisions and trade-offs behind them. Each repository carries its
+> with decisions and trade-offs behind them. Each repository has its own
 > architecture notes, rejected alternatives and validation evidence.
 
 ---
 
 ## Platform & delivery
 
-### [Golden Hour](https://github.com/sindredg/aca-prod) — [live ↗](https://ca-aca-prod-production.yellowglacier-15588c53.norwayeast.azurecontainerapps.io)
+### [Golden Hour](https://github.com/sindredg/aca-prod): [live web app](https://ca-aca-prod-production.yellowglacier-15588c53.norwayeast.azurecontainerapps.io)
 
-A sunlight planner running in production, and the delivery pipeline that puts
-it there. Three Terraform states split by who may apply them: the pipeline
-holds Contributor and cannot create role assignments, so it cannot widen its
-own permissions. Four workload identities, each trusted on exactly one OIDC
-subject; images deploy by digest, never by tag, behind an approval gate.
+A sunrise/set, fullmoon and eclipse planner running in production, and the delivery pipeline that puts
+it there. Three Terraform states split by who may apply them: the pipeline holds Contributor on the RG scope,
+four workload identities trusted on one OIDC subject; images deploy by digest behind an approval gate.
 
 `Terraform` `Container Apps` `OIDC` `GitHub Actions` `FastAPI` `Docker`
 
 ### [Azure Container Platform](https://github.com/sindredg/container-app-in-azure)
 
-The learning lab behind Golden Hour, optimised for showing the reasoning rather
-than for reuse. A public web tier and an internal API with no public address,
-passwordless managed-identity image pulls, revisions and scale-to-zero. The
-infrastructure has been torn down; the repository is the artefact.
+The learning lab behind Golden Hour, optimised for showing the reasoning rather than for reuse. A public web
+tier and an internal API, passwordless managed-identity image pulls, revisions and scale-to-zero. The 
+infrastructure and web app has since been torn down.
 
-`Terraform` `Container Apps` `ACR` `Managed Identity` `Nginx` `FastAPI`
+`Terraform` `Container Apps` `Azure Container Registry` `Managed Identity` `Nginx` `FastAPI`
 
 ---
 
