@@ -7,10 +7,6 @@
 ---
 
 ## Projects
-
-| Project | What it is | Stack |
-| --- | --- | --- |
-## Projects
 | Project | What it is | Stack |
 | --- | --- | --- |
 | [**GKE Kubernetes Platform**](https://github.com/sindredg/k8-lab)<br>**Live:** [sindrg.com](https://sindrg.com) | Private Kubernetes cluster serving live traffic on a custom domain. Terraform provisions VPC, cluster, and reserved address in GCP. GitHub Actions builds non-root image and deploys it by digest using Workload Identity Federation. A Gateway API load balancer terminates managed TLS, redirects HTTP to HTTPS, and routes directly to pod IPs while the Service remains internal. The cluster enforces the restricted Pod Security standard and default-deny NetworkPolicies. | Terraform · GCP · GKE · Gateway API · Certificate Manager · Artifact Registry · Workload Identity Federation · GitHub Actions · OIDC |
