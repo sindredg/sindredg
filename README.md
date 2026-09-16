@@ -12,9 +12,7 @@
 
 ### About
 
-I design, build and run cloud infrastructure and identity platforms — mostly
-around **Entra ID**, **Azure**, **AWS** and **GCP**, with **Terraform** as the
-default way to get there.
+I design, build and run cloud infrastructure and identity platforms.
 
 > Every project below is built and tested in a real environment and documented with
 > implementation workflows, architecture overviews, design decisions, trade-offs,
