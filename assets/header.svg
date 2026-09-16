@@ -119,9 +119,8 @@
   </g>
 
   <g font-family="Segoe UI, Helvetica Neue, Arial, sans-serif">
-    <text x="44" y="92" font-size="40" font-weight="600" fill="#eef4f7" letter-spacing="-0.5">Sindre Grytebust</text>
-    <rect x="45" y="110" width="52" height="3" rx="1.5" fill="#f2b134"/>
-    <text x="44" y="146" font-size="16.5" fill="#b7c9d3">Cloud infrastructure, platforms and identity.</text>
-    <text x="44" y="172" font-size="12.5" fill="#8aa3b1" letter-spacing="0.4">CLOUD &#183; KUBERNETES &#183; TERRAFORM &#183; IDENTITY &#183; AUTOMATION</text>
+    <text x="44" y="96" font-size="40" font-weight="600" fill="#eef4f7" letter-spacing="-0.5">Sindre Grytebust</text>
+    <rect x="45" y="114" width="52" height="3" rx="1.5" fill="#f2b134"/>
+    <text x="44" y="150" font-size="12.5" fill="#8aa3b1" letter-spacing="0.4">CLOUD &#183; KUBERNETES &#183; TERRAFORM &#183; IDENTITY &#183; AUTOMATION</text>
   </g>
 </svg>
