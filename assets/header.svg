@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="840" height="220" viewBox="0 0 840 220" role="img" aria-label="Sindre Grytebust — I build and document cloud platforms and identity systems">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="840" height="220" viewBox="0 0 840 220" role="img" aria-label="Sindre Grytebust — cloud infrastructure, platforms and identity">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#16303f"/>
@@ -74,7 +74,7 @@
   <g font-family="Segoe UI, Helvetica Neue, Arial, sans-serif">
     <text x="44" y="92" font-size="40" font-weight="600" fill="#eef4f7" letter-spacing="-0.5">Sindre Grytebust</text>
     <rect x="45" y="110" width="52" height="3" rx="1.5" fill="#f2b134"/>
-    <text x="44" y="146" font-size="16.5" fill="#b7c9d3">I build and document cloud platforms and identity systems.</text>
-    <text x="44" y="172" font-size="12.5" fill="#8aa3b1" letter-spacing="0.4">ENTRA ID &#183; AZURE &#183; AWS &#183; GCP &#183; BUILT WITH TERRAFORM</text>
+    <text x="44" y="146" font-size="16.5" fill="#b7c9d3">Cloud infrastructure, platforms and identity.</text>
+    <text x="44" y="172" font-size="12.5" fill="#8aa3b1" letter-spacing="0.4">CLOUD &#183; KUBERNETES &#183; TERRAFORM &#183; IDENTITY &#183; AUTOMATION</text>
   </g>
 </svg>
