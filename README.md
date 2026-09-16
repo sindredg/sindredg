@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/header.svg" alt="Sindre Grytebust — cloud infrastructure, platforms and identity" width="100%">
+  <img src="assets/header.svg" alt="Sindre Grytebust, cloud infrastructure and identity" width="100%">
 </p>
 
 <p align="center">
@@ -14,9 +14,9 @@
 
 I design, build and run cloud infrastructure and identity platforms.
 
-> Every project below is built and tested in a real environment and documented with
-> implementation workflows, architecture overviews, design decisions, trade-offs,
-> validation evidence and troubleshooting records.
+> Everything below is built and tested in a real environment, and written up as I go:
+> how it was put together, why it is shaped the way it is, what the trade-offs were,
+> and what broke along the way.
 
 ### Toolbox
 
@@ -37,16 +37,16 @@ I design, build and run cloud infrastructure and identity platforms.
 
 ### Projects
 
-<sub>Click any project to expand.</sub>
+<sub>Click a project to open it.</sub>
 
 <details>
-<summary><b>Kubernetes Platform on GKE</b> &nbsp;·&nbsp; production-grade Kubernetes on a custom domain &nbsp;<sub>live</sub></summary>
+<summary><b>Kubernetes Platform on GKE</b> &nbsp;·&nbsp; Kubernetes on GKE, running on my own domain &nbsp;<sub>live</sub></summary>
 
 <br>
 
 A secure and reliable Kubernetes platform hosting web applications on a custom domain: private VPC,
 keyless delivery, Gateway API with managed TLS, Pod Security, NetworkPolicies, HPA, monitoring and
-failure drills — and actively growing with new features.
+failure drills. Still adding to it.
 
 <sub>Terraform · GCP · GKE · Kubernetes · Gateway API · Artifact Registry · Workload Identity Federation · GitHub Actions</sub>
 
@@ -70,7 +70,7 @@ on ECS, reached over Entra Private Access.
 </details>
 
 <details>
-<summary><b>Azure Hub-and-Spoke with Cross-Premises Connectivity</b> &nbsp;·&nbsp; joined to on-premises over IPsec</summary>
+<summary><b>Azure Hub-and-Spoke with Cross-Premises Connectivity</b> &nbsp;·&nbsp; Azure joined to an on-prem datacenter over IPsec</summary>
 
 <br>
 
@@ -86,7 +86,7 @@ tunnel.
 </details>
 
 <details>
-<summary><b>Azure Container Platform</b> &nbsp;·&nbsp; a public web tier and a private internal API</summary>
+<summary><b>Azure Container Platform</b> &nbsp;·&nbsp; a public web tier and an API with no public address</summary>
 
 <br>
 
@@ -101,7 +101,7 @@ remote state with locking, centralised logging and automated delivery.
 </details>
 
 <details>
-<summary><b>Hybrid identity: AD DS synced to Entra ID</b> &nbsp;·&nbsp; two-site AD forest synchronized to the cloud</summary>
+<summary><b>Hybrid identity: AD DS synced to Entra ID</b> &nbsp;·&nbsp; a two-site AD forest synced to Entra ID</summary>
 
 <br>
 
@@ -130,7 +130,7 @@ just-in-time administration with PIM, entitlement management and access reviews.
 </details>
 
 <details>
-<summary><b>SSO + SCIM for a Self-Hosted App</b> &nbsp;·&nbsp; the workforce identity lifecycle, end to end</summary>
+<summary><b>SSO + SCIM for a Self-Hosted App</b> &nbsp;·&nbsp; OIDC sign-in and SCIM provisioning for Grafana</summary>
 
 <br>
 
@@ -144,7 +144,7 @@ OpenID Connect SSO with app-role mapping, and SCIM provisioning through a custom
 </details>
 
 <details>
-<summary><b>Securing AI with MCP Server and RBAC</b> &nbsp;·&nbsp; scoped, read-only Azure access for an AI agent</summary>
+<summary><b>Securing AI with MCP Server and RBAC</b> &nbsp;·&nbsp; read-only Azure access for Claude, scoped with RBAC</summary>
 
 <br>
 
@@ -158,7 +158,7 @@ authoritative control and host/server hardening as defense in depth.
 </details>
 
 <details>
-<summary><b>Apps, APIs &amp; Access Tokens: OAuth 2.0 in .NET 8</b> &nbsp;·&nbsp; scopes, app roles and claims enforcement</summary>
+<summary><b>Apps, APIs &amp; Access Tokens: OAuth 2.0 in .NET 8</b> &nbsp;·&nbsp; scopes, app roles and token claims in .NET 8</summary>
 
 <br>
 
