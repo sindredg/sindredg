@@ -21,6 +21,17 @@
     </clipPath>
   </defs>
 
+  <style>
+    .sat { transform-box: fill-box; transform-origin: center; offset-rotate: 0deg; }
+    .satA { offset-path: path("M308,98 a112,30 0 1,0 224,0 a112,30 0 1,0 -224,0"); animation: orbit 10s linear infinite; }
+    .satB { offset-path: path("M258,98 a162,46 0 1,0 324,0 a162,46 0 1,0 -324,0"); animation: orbit 16s linear infinite; animation-delay: -4s; }
+    .satC { offset-path: path("M212,98 a208,60 0 1,0 416,0 a208,60 0 1,0 -416,0"); animation: orbit 24s linear infinite; animation-delay: -9s; }
+
+    @keyframes orbit { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+
+    @media (prefers-reduced-motion: reduce) { .sat { animation: none; } }
+  </style>
+
   <g clip-path="url(#fcard)">
     <rect width="840" height="220" fill="url(#fbg)"/>
     <rect width="840" height="220" fill="url(#fdots)"/>
@@ -52,15 +63,9 @@
     </g>
 
     <g transform="rotate(-18 420 98)">
-      <circle r="4" fill="#f2b134">
-        <animateMotion dur="10s" repeatCount="indefinite" calcMode="linear"><mpath href="#oA" xlink:href="#oA"/></animateMotion>
-      </circle>
-      <circle r="3" fill="#c6d6df">
-        <animateMotion dur="16s" begin="-4s" repeatCount="indefinite" calcMode="linear"><mpath href="#oB" xlink:href="#oB"/></animateMotion>
-      </circle>
-      <circle r="2.5" fill="#8aa3b1">
-        <animateMotion dur="24s" begin="-9s" repeatCount="indefinite" calcMode="linear"><mpath href="#oC" xlink:href="#oC"/></animateMotion>
-      </circle>
+      <circle class="sat satA" cx="0" cy="0" r="4" fill="#f2b134"/>
+      <circle class="sat satB" cx="0" cy="0" r="3" fill="#c6d6df"/>
+      <circle class="sat satC" cx="0" cy="0" r="2.5" fill="#8aa3b1"/>
     </g>
 
     <rect x="0.5" y="0.5" width="839" height="219" rx="13.5" fill="none" stroke="#4f6f82" stroke-opacity="0.5"/>

@@ -16,6 +16,32 @@
     </clipPath>
   </defs>
 
+  <style>
+    .wheel { animation: spin 24s linear infinite; }
+    .pulse { animation: pulse 3.2s ease-out infinite; }
+    .replica { animation: replica 6s ease-in-out infinite; }
+    .replica-l { animation-delay: -1s; }
+    .replica-r { animation-delay: -4s; }
+    .wheel, .pulse { transform-box: view-box; transform-origin: 690px 88px; }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse {
+      from { transform: scale(1); opacity: 0.55; }
+      to   { transform: scale(2.6); opacity: 0; }
+    }
+    @keyframes replica {
+      0%, 8%     { opacity: 0; }
+      16%, 70%   { opacity: 1; }
+      78%, 100%  { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wheel, .pulse, .replica { animation: none; }
+      .replica { opacity: 1; }
+      .pulse { opacity: 0; }
+    }
+  </style>
+
   <g clip-path="url(#card)">
     <rect width="840" height="220" fill="url(#bg)"/>
     <rect width="840" height="220" fill="url(#dots)"/>
@@ -25,9 +51,7 @@
 
   <!-- kubernetes: the helm wheel, with replicas scaling underneath -->
   <g>
-    <g stroke="#4f6f82" stroke-width="2" fill="none" stroke-linejoin="round">
-      <animateTransform attributeName="transform" type="rotate"
-        from="0 690 88" to="360 690 88" dur="60s" repeatCount="indefinite"/>
+    <g class="wheel" stroke="#4f6f82" stroke-width="2" fill="none" stroke-linejoin="round">
       <path d="M690.00,36.00 L730.66,55.58 L740.70,99.57 L712.56,134.85 L667.44,134.85 L639.30,99.57 L649.34,55.58 Z" stroke="#6e8ea1"/>
       <path d="M690.00,74.00 L690.00,46.00"/>
       <path d="M700.95,79.27 L722.84,61.81"/>
@@ -37,10 +61,7 @@
       <path d="M676.35,91.12 L649.05,97.35"/>
       <path d="M679.05,79.27 L657.16,61.81"/>
     </g>
-    <circle cx="690" cy="88" r="12" fill="none" stroke="#f2b134" stroke-width="1.5" opacity="0">
-      <animate attributeName="r" values="12;30" dur="3.2s" begin="1s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.5;0" dur="3.2s" begin="1s" repeatCount="indefinite"/>
-    </circle>
+    <circle class="pulse" cx="690" cy="88" r="12" fill="none" stroke="#f2b134" stroke-width="1.5" opacity="0"/>
     <circle cx="690" cy="88" r="9" fill="#e6eef2"/>
   </g>
 
@@ -48,12 +69,8 @@
     <rect x="663.5" y="158" width="13" height="13" rx="3" fill="#8aa3b1"/>
     <rect x="683.5" y="158" width="13" height="13" rx="3" fill="#8aa3b1"/>
     <rect x="703.5" y="158" width="13" height="13" rx="3" fill="#8aa3b1"/>
-    <rect x="643.5" y="158" width="13" height="13" rx="3" fill="#f2b134" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.16;0.7;0.78;1" dur="6s" begin="4.0s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="723.5" y="158" width="13" height="13" rx="3" fill="#f2b134" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.16;0.7;0.78;1" dur="6s" begin="2.0s" repeatCount="indefinite"/>
-    </rect>
+    <rect class="replica replica-l" x="643.5" y="158" width="13" height="13" rx="3" fill="#f2b134" opacity="0"/>
+    <rect class="replica replica-r" x="723.5" y="158" width="13" height="13" rx="3" fill="#f2b134" opacity="0"/>
   </g>
 
   <g font-family="Segoe UI, Helvetica Neue, Arial, sans-serif">

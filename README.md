@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/header.svg" alt="Sindre Grytebust, cloud infrastructure and identity" width="100%">
+  <img src="assets/header.svg?v=2" alt="Sindre Grytebust, cloud infrastructure and identity" width="100%">
 </p>
 
 <p align="center">
@@ -174,5 +174,5 @@ modeled through scopes, app roles and groups, then enforced from token claims in
 ---
 
 <p align="center">
-  <img src="assets/footer.svg" alt="sindrg.com" width="100%">
+  <img src="assets/footer.svg?v=2" alt="sindrg.com" width="100%">
 </p>
