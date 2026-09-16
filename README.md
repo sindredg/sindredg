@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/header.svg?v=2" alt="Sindre Grytebust, cloud infrastructure and identity" width="100%">
+  <img src="assets/header.svg?v=3" alt="Sindre Grytebust, cloud infrastructure and identity" width="100%">
 </p>
 
 <p align="center">
