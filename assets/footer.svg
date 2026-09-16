@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="840" height="72" viewBox="0 0 840 72" role="img" aria-label="sindrg.com">
+  <defs>
+    <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16303f"/>
+      <stop offset="1" stop-color="#224154"/>
+    </linearGradient>
+    <pattern id="fdots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#8aa3b1" opacity="0.13"/>
+    </pattern>
+    <clipPath id="fcard">
+      <rect width="840" height="72" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#fcard)">
+    <rect width="840" height="72" fill="url(#fbg)"/>
+    <rect width="840" height="72" fill="url(#fdots)"/>
+    <rect x="0.5" y="0.5" width="839" height="71" rx="13.5" fill="none" stroke="#4f6f82" stroke-opacity="0.5"/>
+  </g>
+
+  <path id="f" d="M44,26 L796,26" stroke="#4f6f82" stroke-width="1.5" fill="none"/>
+  <circle cx="44" cy="26" r="4" fill="#8aa3b1"/>
+  <circle cx="796" cy="26" r="4" fill="#8aa3b1"/>
+  <circle r="3" fill="#f2b134" opacity="0">
+    <animateMotion dur="8s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.4;1" calcMode="linear"><mpath href="#f" xlink:href="#f"/></animateMotion>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.4;0.41;1" dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="420" y="54" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#b7c9d3" letter-spacing="0.4">sindrg.com</text>
+</svg>
