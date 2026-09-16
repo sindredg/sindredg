@@ -12,7 +12,7 @@
 
 ### About
 
-I design, build and run cloud infrastructure and identity platforms.
+Designing, building and running cloud infrastructure and identity platforms.
 
 > Everything below is built and tested in a real environment, and written up as I go:
 > how it was put together, why it is shaped the way it is, what the trade-offs were,
@@ -40,7 +40,7 @@ I design, build and run cloud infrastructure and identity platforms.
 <sub>Click a project to open it.</sub>
 
 <details>
-<summary><b>Kubernetes Platform on GKE</b> &nbsp;·&nbsp; Kubernetes on GKE, running on my own domain &nbsp;<sub>live</sub></summary>
+<summary><b>Kubernetes Platform on GKE</b> &nbsp;·&nbsp; Kubernetes on GKE, running on my domain &nbsp;<sub>live</sub></summary>
 
 <br>
 
@@ -86,7 +86,7 @@ tunnel.
 </details>
 
 <details>
-<summary><b>Azure Container Platform</b> &nbsp;·&nbsp; a public web tier and an API with no public address</summary>
+<summary><b>Azure Container Platform</b> &nbsp;·&nbsp; a public web tier and an internal API</summary>
 
 <br>
 
