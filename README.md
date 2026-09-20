@@ -44,11 +44,9 @@ Designing, building and running cloud infrastructure and identity platforms.
 
 <br>
 
-A secure and reliable Kubernetes platform hosting web applications on a custom domain: private VPC,
-keyless delivery, Gateway API with managed TLS, Pod Security, NetworkPolicies, HPA, monitoring and
-failure drills. Still adding to it.
+A private GKE platform serving public traffic on my own domain, built with Terraform. Gateway API with managed TLS, Pod Security, default-deny NetworkPolicies, pod and node autoscaling measured across three zones, and a threat model whose findings are closed with recorded evidence. Agents operate it: they triage its Security Command Center findings, read the cluster only through an audited gateway, and propose fixes as pull requests.
 
-<sub>Terraform · GCP · GKE · Kubernetes · Gateway API · Artifact Registry · Workload Identity Federation · GitHub Actions</sub>
+<sub>erraform · GCP · GKE · Kubernetes · Gateway API · Cloud Armor · Artifact Registry · Workload Identity Federation · GitHub Actions · Security Command Center · Pub/Sub · Vertex AI · MCP · k6</sub>
 
 [Repository](https://github.com/sindredg/k8-lab) &nbsp;·&nbsp; [Live at sindrg.com](https://sindrg.com)
 
