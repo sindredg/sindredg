@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://sindrg.com"><img alt="Website" src="https://img.shields.io/badge/sindrg.com-1f3b4d?style=flat-square&logo=google-chrome&logoColor=f2b134"></a>
+  <a href="https://sindrg.com"><img alt="Live platform" src="https://img.shields.io/badge/Live%20platform-1f3b4d?style=flat-square&logo=google-chrome&logoColor=f2b134"></a>
   <a href="https://github.com/sindredg?tab=repositories"><img alt="Projects" src="https://img.shields.io/badge/Projects-1f3b4d?style=flat-square&logo=github&logoColor=f2b134"></a>
   <a href="mailto:sindre.demetrio@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-1f3b4d?style=flat-square&logo=maildotru&logoColor=f2b134"></a>
 </p>
@@ -12,11 +12,12 @@
 
 ### About
 
-Designing, building and running cloud infrastructure and identity platforms.
+I design, build and run cloud infrastructure and identity platforms. My work focuses on the points
+where networking, access control, delivery and operations meet.
 
-> Everything below is built and tested in a real environment, and written up as I go:
-> how it was put together, why it is shaped the way it is, what the trade-offs were,
-> and what broke along the way.
+> Everything below was built and tested in a real environment. The repositories record how each
+> system was put together, why it is shaped the way it is, what the trade-offs were, how it was
+> validated, and what broke along the way.
 
 ### Toolbox
 
@@ -35,139 +36,73 @@ Designing, building and running cloud infrastructure and identity platforms.
 
 ---
 
-### Projects
+### Selected work
 
-<sub>Click a project to open it.</sub>
+#### [Kubernetes platform on GKE](https://github.com/sindredg/k8-lab) &nbsp;·&nbsp; [live](https://sindrg.com)
 
-<details>
-<summary><b>Kubernetes Platform on GKE</b> &nbsp;·&nbsp; Kubernetes on GKE, running on my domain &nbsp;<sub>live</sub></summary>
+A private GKE platform serving two workloads through one public Gateway with managed TLS. Terraform
+builds the network and cluster, and keyless GitHub Actions delivery builds, scans and rolls out each
+image. The platform includes Pod Security, default-deny NetworkPolicies, workload and node
+autoscaling, observability, failure drills and a threat model with measured findings.
 
-<br>
+Measured at 125 requests a second with a p95 of 394 ms and no failures after scaling from two to
+eight Pods. Connection failures during rollout fell from 72 to zero after the drain path was fixed.
 
-A private GKE platform serving public traffic on my own domain, built with Terraform. Gateway API with managed TLS, Pod Security, default-deny NetworkPolicies, pod and node autoscaling measured across three zones, and a threat model whose findings are closed with recorded evidence. Agents operate it: they triage its Security Command Center findings, read the cluster only through an audited gateway, and propose fixes as pull requests.
+Security Command Center findings currently reach Pub/Sub and a dead-letter path. The triage worker,
+verdict notification path and remediation pull requests are the next milestone, not completed work.
 
-<sub>erraform · GCP · GKE · Kubernetes · Gateway API · Cloud Armor · Artifact Registry · Workload Identity Federation · GitHub Actions · Security Command Center · Pub/Sub · Vertex AI · MCP · k6</sub>
+`Terraform` `GCP` `GKE` `Kubernetes` `Gateway API` `Cloud Armor` `Workload Identity Federation` `GitHub Actions` `k6`
 
-[Repository](https://github.com/sindredg/k8-lab) &nbsp;·&nbsp; [Live at sindrg.com](https://sindrg.com)
+#### [Cross-cloud workforce identity: Entra ID to AWS](https://github.com/sindredg/cross-cloud-entra-aws)
 
-</details>
+Microsoft Entra ID is the workforce identity source for AWS IAM Identity Center through SAML and
+SCIM. Dynamic role groups, access packages and lifecycle workflows govern joiner, mover, leaver and
+time-limited elevated access. Terraform owns the AWS permission sets and the private target running
+on ECS Fargate behind Entra Private Access.
 
-<details>
-<summary><b>Cross-cloud identity: Entra ID to AWS</b> &nbsp;·&nbsp; Entra ID as the identity source for AWS</summary>
+The end-to-end lifecycle is measured: baseline access arrived 55 seconds after enablement, role
+groups changed 24 seconds after a title update, and SCIM disabled the AWS user 10 minutes after the
+Entra account was disabled.
 
-<br>
+`Terraform` `AWS IAM Identity Center` `Entra ID` `SAML` `SCIM` `Lifecycle Workflows` `ECS Fargate`
 
-Entra ID as identity source for AWS. SAML federation and SCIM provisioning to AWS IAM Identity Center,
-attribute-based security group and JML workflows. Terraform builds an isolated VPC where Grafana runs
-on ECS, reached over Entra Private Access.
+#### [Hybrid identity: AD DS synced to Entra ID](https://github.com/sindredg/two-site-hybrid-identity)
 
-<sub>Terraform · AWS IAM Identity Center · Entra ID · Private Access · Lifecycle Workflows · SAML · SCIM · Bicep · MS Graph · Grafana · ECS Fargate</sub>
+A two-site Active Directory forest in Azure, synchronized to Entra ID and reachable only through
+Azure Bastion. Terraform builds the private infrastructure and idempotent PowerShell builds the
+directory. Hybrid-joined endpoints receive security baselines, per-machine LAPS credentials and
+policy-enforced Tier 0, 1 and 2 administration boundaries.
 
-[Repository](https://github.com/sindredg/cross-cloud-entra-aws)
+All nine phases are built and verified. The repository includes implementation records, searchable
+troubleshooting logs, architecture decisions and an explicit risk register.
 
-</details>
+`Terraform` `Azure` `Active Directory` `Entra ID` `PowerShell` `Group Policy` `Windows LAPS`
 
-<details>
-<summary><b>Azure Hub-and-Spoke with Cross-Premises Connectivity</b> &nbsp;·&nbsp; Azure joined to an on-prem datacenter over IPsec</summary>
+#### [Sky](https://github.com/sindredg/sky) &nbsp;·&nbsp; [live](https://sindrg.com/sky)
 
-<br>
+A deterministic Python application for sunlight, moon and eclipse data across 37 places, plus a
+browser observatory. It uses no external API or database. Solar and lunar calculations have bounded
+accuracy checks against published models and NASA JPL Horizons samples, with the limitations stated
+alongside the results. Python, frontend, container and deployment contracts run in CI.
 
-Hub-and-spoke network in Azure joined to a simulated on-premises datacenter in another region over an
-encrypted IPsec tunnel, built one mechanism at a time. Gateway transit, subnet NSGs, Bastion access,
-forced routing through Azure Firewall, Key Vault behind a private endpoint, and two-way DNS across the
-tunnel.
+`Python` `FastAPI` `JavaScript` `Docker` `pytest` `GitHub Actions`
 
-<sub>Terraform · Azure Networking · VPN Gateway · Hub-and-Spoke · CI/CD · GitHub Actions · OIDC · Azure RBAC</sub>
+### More projects
 
-[Repository](https://github.com/sindredg/hybrid-network-az)
-
-</details>
-
-<details>
-<summary><b>Azure Container Platform</b> &nbsp;·&nbsp; a public web tier and an internal API</summary>
-
-<br>
-
-A public web tier and an internal API on Azure Container Apps, deployed with Terraform. The API has no
-public address. Passwordless managed-identity image pulls, health probes, revisions, scale-to-zero,
-remote state with locking, centralised logging and automated delivery.
-
-<sub>Terraform · Azure Container Apps · ACR · Managed Identity · CI/CD · Docker · Nginx · Python/FastAPI</sub>
-
-[Repository](https://github.com/sindredg/container-app-in-azure)
-
-</details>
-
-<details>
-<summary><b>Hybrid identity: AD DS synced to Entra ID</b> &nbsp;·&nbsp; a two-site AD forest synced to Entra ID</summary>
-
-<br>
-
-Two-site Active Directory forest in Azure, synchronized with Entra ID. Features hybrid-joined endpoints
-and users, per-machine LAPS credentials, policy-enforced tiered privileged access, and private networks.
-Built throughout with Terraform and idempotent PowerShell.
-
-<sub>Terraform · Azure · Entra ID · Active Directory · Windows Server · Group Policy · Windows LAPS · PowerShell · Entra Connect Sync · GitHub Actions</sub>
-
-[Repository](https://github.com/sindredg/two-site-hybrid-identity)
-
-</details>
-
-<details>
-<summary><b>Access Control &amp; Identity Governance</b> &nbsp;·&nbsp; Conditional Access, PIM and access reviews</summary>
-
-<br>
-
-Governs tenant-wide access and access to in-house applications with Entra ID: Conditional Access,
-just-in-time administration with PIM, entitlement management and access reviews.
-
-<sub>Entra ID · Conditional Access · PIM · FIDO2 · Access Reviews · SSO · SCIM · Microsoft Graph PowerShell</sub>
-
-[Repository](https://github.com/sindredg/Access-Control-and-Identity-Governance)
-
-</details>
-
-<details>
-<summary><b>SSO + SCIM for a Self-Hosted App</b> &nbsp;·&nbsp; OIDC sign-in and SCIM provisioning for Grafana</summary>
-
-<br>
-
-Implements the workforce identity lifecycle for self-hosted Grafana: Entra ID as the identity provider,
-OpenID Connect SSO with app-role mapping, and SCIM provisioning through a custom bridge.
-
-<sub>OpenID Connect · SSO · SCIM · Grafana · App Roles · Azure IaaS · Docker</sub>
-
-[Repository](https://github.com/sindredg/entra-app-roles-sso-scim)
-
-</details>
-
-<details>
-<summary><b>Securing AI with MCP Server and RBAC</b> &nbsp;·&nbsp; read-only Azure access for Claude, scoped with RBAC</summary>
-
-<br>
-
-Gives Claude scoped, read-only access to Azure through the Azure MCP Server, with Azure RBAC as the
-authoritative control and host/server hardening as defense in depth.
-
-<sub>Azure MCP Server · Azure RBAC · Service Principal · Claude</sub>
-
-[Repository](https://github.com/sindredg/claude-azure-mcp-rbac-design)
-
-</details>
-
-<details>
-<summary><b>Apps, APIs &amp; Access Tokens: OAuth 2.0 in .NET 8</b> &nbsp;·&nbsp; scopes, app roles and token claims in .NET 8</summary>
-
-<br>
-
-Builds an Entra ID authorization chain with a protected API and web and daemon clients. Access is
-modeled through scopes, app roles and groups, then enforced from token claims in a .NET 8 API.
-
-<sub>.NET 8 · OAuth 2.0 · OpenID Connect · App Roles · App Registrations · Application Permissions</sub>
-
-[Repository](https://github.com/sindredg/app-registrations-and-JWT-tokens)
-
-</details>
+- [Azure hub-and-spoke with cross-premises connectivity](https://github.com/sindredg/hybrid-network-az),
+  an IPsec-connected hub, spoke and simulated datacenter with centralized inspection, private DNS
+  and no public workload exposure.
+- [Azure Container Platform](https://github.com/sindredg/container-app-in-azure), a public web tier
+  and internal API on Azure Container Apps with managed identity, remote state, private images and
+  automated delivery.
+- [Access Control and Identity Governance](https://github.com/sindredg/Access-Control-and-Identity-Governance),
+  Conditional Access, PIM, entitlement management and access reviews built and tested on Entra ID P2.
+- [SSO and SCIM for self-hosted Grafana](https://github.com/sindredg/entra-app-roles-sso-scim),
+  OpenID Connect sign-in, app-role mapping and lifecycle provisioning through a custom SCIM bridge.
+- [Least-privilege AI access to Azure](https://github.com/sindredg/claude-azure-mcp-rbac-design),
+  read-only Azure MCP access with Azure RBAC as the authoritative boundary.
+- [Apps, APIs and access tokens](https://github.com/sindredg/app-registrations-and-JWT-tokens),
+  delegated scopes, application roles and token-claim enforcement in a minimal .NET 8 API.
 
 ---
 
