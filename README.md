@@ -35,7 +35,7 @@
   <a href="https://github.com/sindredg/k8-lab/tree/main/worklog"><img alt="Implementation worklogs" src="https://img.shields.io/badge/inspect-worklogs-4f6f82?style=flat-square"></a>
 </p>
 
-A kubernetes cluster hosting a couple of public workloads, and an AI agent that handles and remediates security findings.
+A private GKE cluster hosting a couple of public workloads, and an AI agent that triages its security findings. Reviewed rules settle what they can, a model settles the rest, and the model is scored against the rules alone.
 
 <table>
   <tr>
@@ -44,6 +44,12 @@ A kubernetes cluster hosting a couple of public workloads, and an AI agent that 
     <td align="center"><strong>70.5 s</strong><br><sub>median deploy</sub></td>
     <td align="center"><strong>0</strong><br><sub>rollout connection failures, from 72</sub></td>
   </tr>
+  <tr>
+    <td align="center"><strong>7 of 7</strong><br><sub>holdout findings right every run, rules alone 5</sub></td>
+    <td align="center"><strong>0</strong><br><sub>false contradictions in 125 runs, from 15</sub></td>
+    <td align="center"><strong>~2 s</strong><br><sub>p95 per model call</sub></td>
+    <td align="center"><strong>0</strong><br><sub>critical or high in the frontend image, from 17</sub></td>
+  </tr>
 </table>
 
 <table>
@@ -51,6 +57,9 @@ A kubernetes cluster hosting a couple of public workloads, and an AI agent that 
     <td width="33%"><strong>Platform</strong><br><sub>Private nodes, custom VPC, Cloud NAT, Gateway API, managed TLS and autoscaling across three zones.</sub></td>
     <td width="33%"><strong>Delivery</strong><br><sub>Keyless federation, immutable images, required checks, gated rollouts and automated upstream pin updates.</sub></td>
     <td width="33%"><strong>Security and operations</strong><br><sub>Pod Security, default-deny networking, Cloud Armor, observability, failure drills and a measured threat model.</sub></td>
+  </tr>
+  <tr>
+    <td colspan="3"><strong>AI triage</strong> in <a href="https://github.com/sindredg/ai-k8s">ai-k8s</a><br><sub>Security Command Center findings over Pub/Sub to a worker with four scoped grants. The model can never accept a finding, a contradiction must land on a control that applies, every verdict is written to an append-only ledger before anyone is told, and every failure path was drilled.</sub></td>
   </tr>
 </table>
 
@@ -64,12 +73,17 @@ flowchart LR
     GKE --> Nginx
     GKE --> Sky
     GKE -. logs and metrics .-> Monitor[Cloud Monitoring]
+    SCC[Security Command Center] --> PubSub[Pub/Sub]
+    PubSub --> Agent[Triage agent<br/>rules, then Vertex AI]
+    Agent --> Ledger[Verdict ledger]
+    Agent -. verdict .-> Monitor
 ```
 
 <p align="center">
   <code>Terraform</code>&nbsp; <code>GKE</code>&nbsp; <code>Kubernetes</code>&nbsp;
   <code>Gateway API</code>&nbsp; <code>Cloud Armor</code>&nbsp;
-  <code>Workload Identity Federation</code>&nbsp; <code>GitHub Actions</code>&nbsp; <code>k6</code>
+  <code>Workload Identity Federation</code>&nbsp; <code>GitHub Actions</code>&nbsp; <code>k6</code>&nbsp;
+  <code>Security Command Center</code>&nbsp; <code>Vertex AI</code>&nbsp; <code>Go</code>
 </p>
 
 ---
