@@ -26,7 +26,7 @@
 
 ## Featured build
 
-<h3 align="center">Secure Kubernetes platform on GKE</h3>
+<h3 align="center">Kubernetes platform: Built, tested, secured and validated</h3>
 
 <p align="center">
   <a href="https://sindrg.com"><img alt="Open live platform" src="https://img.shields.io/badge/open_live_platform-2da44e?style=flat-square&logo=googlechrome&logoColor=white"></a>
@@ -35,7 +35,7 @@
   <a href="https://github.com/sindredg/k8-lab/tree/main/worklog"><img alt="Implementation worklogs" src="https://img.shields.io/badge/inspect-worklogs-4f6f82?style=flat-square"></a>
 </p>
 
-A private GKE cluster hosting a couple of public workloads, and an AI agent that triages its security findings. Reviewed rules settle what they can, a model settles the rest, and the model is scored against the rules alone.
+A private GKE cluster hosting public workloads, and an AI agent that triages security findings.
 
 <table>
   <tr>
