@@ -35,7 +35,7 @@
   <a href="https://github.com/sindredg/k8-lab/tree/main/worklog"><img alt="Implementation worklogs" src="https://img.shields.io/badge/inspect-worklogs-4f6f82?style=flat-square"></a>
 </p>
 
-A private GKE platform serving `nginx` and [`sky`](https://sindrg.com/sky)
+A kubernetes cluster hosting a couple of public workloads, and an AI agent that handles and remediates security findings.
 
 <table>
   <tr>
