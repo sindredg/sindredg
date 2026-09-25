@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://sindrg.com"><img alt="Live platform" src="https://img.shields.io/badge/LIVE-sindrg.com-f2b134?style=for-the-badge&labelColor=1f3b4d"></a>
+  <a href="https://github.com/sindredg/k8-lab"><img alt="Latest project" src="https://img.shields.io/badge/LATEST-k8--lab-f2b134?style=for-the-badge&labelColor=1f3b4d"></a>
   <a href="https://github.com/sindredg?tab=repositories"><img alt="Projects" src="https://img.shields.io/badge/EXPLORE-projects-f2b134?style=for-the-badge&logo=github&logoColor=f2b134&labelColor=1f3b4d"></a>
 </p>
 
@@ -24,18 +24,21 @@
 
 ---
 
-## Featured build
+## Latest project
 
 <h3 align="center">Kubernetes platform: Built, tested, secured and validated</h3>
 
 <p align="center">
-  <a href="https://sindrg.com"><img alt="Open live platform" src="https://img.shields.io/badge/open_live_platform-2da44e?style=flat-square&logo=googlechrome&logoColor=white"></a>
   <a href="https://github.com/sindredg/k8-lab"><img alt="Open repository" src="https://img.shields.io/badge/source-k8--lab-24292f?style=flat-square&logo=github&logoColor=white"></a>
   <a href="https://github.com/sindredg/k8-lab/blob/main/decisions.md"><img alt="Architecture decisions" src="https://img.shields.io/badge/read-decisions-4f6f82?style=flat-square"></a>
   <a href="https://github.com/sindredg/k8-lab/tree/main/worklog"><img alt="Implementation worklogs" src="https://img.shields.io/badge/inspect-worklogs-4f6f82?style=flat-square"></a>
 </p>
 
-A private GKE cluster hosting public workloads, and an AI agent that triages security findings.
+A private GKE cluster hosting public workloads, and an AI agent that triages security findings. It ran at sindrg.com from late August until 25 September 2026, when I shut it down. The repo still has the Terraform, the decisions, a worklog for every phase and the [final screenshots](https://github.com/sindredg/k8-lab/blob/main/worklog/shutdown.md).
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sindredg/k8-lab/main/images/shutdown-final-home.png" alt="sindrg.com on its last day" width="85%">
+</p>
 
 <table>
   <tr>
@@ -51,6 +54,10 @@ A private GKE cluster hosting public workloads, and an AI agent that triages sec
     <td align="center"><strong>0</strong><br><sub>critical or high in the frontend image, from 17</sub></td>
   </tr>
 </table>
+
+<details>
+<summary><strong>What was inside</strong></summary>
+<br>
 
 <table>
   <tr>
@@ -79,6 +86,8 @@ flowchart LR
     Agent -. verdict .-> Monitor
 ```
 
+</details>
+
 <p align="center">
   <code>Terraform</code>&nbsp; <code>GKE</code>&nbsp; <code>Kubernetes</code>&nbsp;
   <code>Gateway API</code>&nbsp; <code>Cloud Armor</code>&nbsp;
@@ -103,5 +112,5 @@ architecture decisions, validation evidence and troubleshooting records.
 ---
 
 <p align="center">
-  <img src="assets/footer.svg?v=2" alt="sindrg.com" width="100%">
+  <img src="assets/footer.svg?v=3" alt="github.com/sindredg" width="100%">
 </p>

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="840" height="220" viewBox="0 0 840 220" role="img" aria-label="sindrg.com">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="840" height="220" viewBox="0 0 840 220" role="img" aria-label="github.com/sindredg">
   <defs>
     <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#16303f"/>
@@ -71,5 +71,5 @@
     <rect x="0.5" y="0.5" width="839" height="219" rx="13.5" fill="none" stroke="#4f6f82" stroke-opacity="0.5"/>
   </g>
 
-  <text x="420" y="206" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#b7c9d3" letter-spacing="0.4">sindrg.com</text>
+  <text x="420" y="206" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#b7c9d3" letter-spacing="0.4">github.com/sindredg</text>
 </svg>
