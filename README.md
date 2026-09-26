@@ -1,4 +1,4 @@
-<img src="assets/header.svg" alt="Sindre Grytebust — infrastructure, identity and security. Animated Kubernetes control plane, kubelets, nodes and autoscaling." width="100%">
+<img src="assets/header.svg" alt="Sindre Grytebust — Infrastructure, Identity, Security" width="100%">
 
 <p align="center">
   <a href="#featured-project">Featured project</a> &nbsp; · &nbsp;
@@ -21,9 +21,8 @@
 <sub>Completed lab &nbsp; / &nbsp; Google Cloud + Kubernetes</sub>
 <h2>Kubernetes platform &amp; AI security triage</h2>
 <p>A private GKE cluster serving public workloads. Keyless delivery, measured rollouts, failure drills, and an AI agent that triages security findings.</p>
-<p><a href="https://github.com/sindredg/k8-lab"><strong>Explore the project </strong></a> &nbsp; · &nbsp; <a href="https://github.com/sindredg/k8-lab/blob/main/decisions.md">Decisions</a> &nbsp; · &nbsp; <a href="https://github.com/sindredg/k8-lab/tree/main/worklog">Worklogs</a></p>
-<a href="https://github.com/sindredg/k8-lab/blob/main/worklog/shutdown.md"><img src="https://raw.githubusercontent.com/sindredg/k8-lab/main/images/shutdown-final-home.png" alt="The sindrg.com homepage on the final day of the GKE deployment" width="100%"></a>
-<p><sub>Ran at sindrg.com from August to 25 September 2026. Infrastructure shut down; code, worklogs, and evidence preserved.</sub></p>
+<p><a href="https://github.com/sindredg/k8-lab"><strong>Explore the project</strong></a> &nbsp; · &nbsp; <a href="https://github.com/sindredg/k8-lab/blob/main/decisions.md">Decisions</a> &nbsp; · &nbsp; <a href="https://github.com/sindredg/k8-lab/tree/main/worklog">Worklogs</a> &nbsp; · &nbsp; <a href="https://github.com/sindredg/k8-lab/blob/main/worklog/shutdown.md">Shutdown notes</a></p>
+<p><sub>Infrastructure retired in September 2026; code, worklogs, and validation notes remain.</sub></p>
 </td></tr>
 <tr>
 <td width="33%" align="center"><h3>125 req/s</h3><sub>8 Pods · no failures</sub><br><br></td>
