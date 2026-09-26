@@ -1,41 +1,71 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img" aria-labelledby="title desc">
-<title id="title">Sindre Grytebust — Infrastructure. Identity. Security.</title>
-<desc id="desc">Mint typography and an abstract layered network on a midnight background.</desc>
-<defs>
-  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#263437" stroke-opacity=".45"/></pattern>
-  <radialGradient id="glow"><stop stop-color="#22483f"/><stop offset="1" stop-color="#101719"/></radialGradient>
-  <linearGradient id="plane" x2="1" y2="1"><stop stop-color="#21433b"/><stop offset="1" stop-color="#111d20"/></linearGradient>
-  <clipPath id="clip"><rect width="960" height="320" rx="18"/></clipPath>
-</defs>
+<title id="title">Sindre Grytebust — infrastructure, identity and security</title>
+<desc id="desc">Illustrative Kubernetes cluster. Kubelets watch the API server for assigned work and report status. Two nodes stay present while a third is provisioned, runs pods, and is removed through node autoscaling. This shows management communication, not application traffic.</desc>
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#20302b" stroke-opacity=".45"/></pattern><clipPath id="clip"><rect width="960" height="320" rx="14"/></clipPath></defs>
 <style>
-.flow {stroke-dasharray:5 12; animation:flow 8s linear infinite}
-@keyframes flow {to {stroke-dashoffset:-170}}
-@media(prefers-reduced-motion:reduce){.flow{animation:none}}
+.packet { offset-rotate:0deg; opacity:0; animation:packet 4s linear infinite; }
+.watch1 { offset-path:path('M559 153 L607 153 L644 73 L694 73'); }
+.watch2 { offset-path:path('M559 153 L694 158'); animation-delay:-2s; }
+.status1 { offset-path:path('M694 80 L649 80 L612 164 L559 164'); animation-delay:-1s; }
+.status2 { offset-path:path('M694 166 L559 166'); animation-delay:-3s; }
+.watch3 { offset-path:path('M559 153 L607 153 L644 243 L694 243'); }
+.status3 { offset-path:path('M694 250 L649 250 L612 164 L559 164'); animation-delay:-2s; }
+.extra { animation:node 16s ease-in-out infinite; }
+.extra-pods { animation:pods 16s ease-in-out infinite; }
+.extra-traffic { animation:traffic 16s ease-in-out infinite; }
+@keyframes packet { 0%{offset-distance:0%;opacity:0} 12%,85%{opacity:.85} 100%{offset-distance:100%;opacity:0} }
+@keyframes node {0%,22%,96%,100%{opacity:0} 32%,86%{opacity:1}}
+@keyframes pods {0%,38%,86%,100%{opacity:0} 48%,74%{opacity:1}}
+@keyframes traffic {0%,32%,88%,100%{opacity:0} 42%,78%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.packet{animation:none;display:none}.extra,.extra-pods,.extra-traffic{animation:none;opacity:1}}
 </style>
 <g clip-path="url(#clip)">
-<rect width="960" height="320" fill="#101719"/>
-<ellipse cx="775" cy="155" rx="250" ry="240" fill="url(#glow)"/>
-<rect width="960" height="320" fill="url(#grid)"/>
-<path d="M0 0H960" stroke="#a7f3c8" stroke-width="4"/>
+<rect width="960" height="320" fill="#111a18"/><rect width="960" height="320" fill="url(#grid)"/>
 <g font-family="Segoe UI,Arial,sans-serif">
-<text x="42" y="51" font-family="Consolas,monospace" font-size="14" letter-spacing="3" fill="#a7f3c8">SINDRE GRYTEBUST</text>
-<text x="39" y="126" font-size="56" font-weight="700" letter-spacing="-2" fill="#f0f5f2">Infrastructure.</text>
-<text x="39" y="192" font-size="56" font-weight="700" letter-spacing="-2" fill="#a7f3c8">Identity. Security.</text>
-<text x="42" y="236" font-size="16" fill="#aebfba">Built in the cloud. Tested in practice.</text>
-<text x="42" y="283" font-family="Consolas,monospace" font-size="11" letter-spacing="1.7" fill="#aebfba">TERRAFORM / KUBERNETES / ENTRA ID</text>
+<text x="36" y="97" font-size="23" font-weight="500" fill="#e0e9e4">Sindre Grytebust</text>
+<text x="36" y="143" font-size="24" font-weight="400" fill="#adcbb8">Infrastructure, identity</text>
+<text x="36" y="176" font-size="24" font-weight="400" fill="#adcbb8">and security.</text>
+<text x="36" y="223" font-size="12" fill="#a2b4aa">Terraform · Kubernetes · Entra ID</text>
+<path d="M378 49V271" stroke="#2b3e34"/>
+<rect x="412" y="75" width="147" height="123" rx="9" fill="#17231e" stroke="#526b5d"/>
+<text x="485" y="97" text-anchor="middle" font-size="13" fill="#d8e5dd">control plane</text>
+<text x="485" y="118" text-anchor="middle" font-size="10" fill="#a2b4aa">scheduler · controllers</text>
+<path d="M473 124V135M498 135V124" stroke="#72917d"/>
+<rect x="425" y="138" width="121" height="37" rx="5" fill="#20352a" stroke="#7c9d87"/>
+<text x="485" y="161" text-anchor="middle" font-size="13" fill="#dcebe1">API server</text>
+<text x="485" y="190" text-anchor="middle" font-size="10" fill="#a2b4aa">etcd</text>
+<path d="M559 153H607L644 73H694M559 153L694 158" fill="none" stroke="#4a6855"/>
+<path d="M694 80H649L612 164H559M694 166H559" fill="none" stroke="#575e77"/>
+<g class="extra"><path d="M559 153H607L644 243H694" fill="none" stroke="#4a6855"/><path d="M694 250H649L612 164H559" fill="none" stroke="#575e77"/></g>
+<g >
+<rect x="681" y="33" width="244" height="65" rx="7" fill="#16221c" stroke="#526b5d" />
+<text x="695" y="51" font-size="11" fill="#b2c9ba">node 01</text>
+<rect x="694" y="61" width="65" height="24" rx="4" fill="#20352a" stroke="#65836f"/>
+<text x="726" y="77" text-anchor="middle" font-size="11" fill="#dcebe1">kubelet</text>
+<path d="M759 73H804" stroke="#668b72"/>
+<text x="842" y="51" text-anchor="middle" font-size="10" fill="#a2b4aa">pods</text>
+<g ><rect x="806" y="61" width="22" height="24" rx="3" fill="#294734" stroke="#7b9f86"/><rect x="838" y="61" width="22" height="24" rx="3" fill="#294734" stroke="#7b9f86"/><rect x="870" y="61" width="22" height="24" rx="3" fill="#294734" stroke="#7b9f86"/></g>
+</g><g >
+<rect x="681" y="118" width="244" height="65" rx="7" fill="#16221c" stroke="#526b5d" />
+<text x="695" y="136" font-size="11" fill="#b2c9ba">node 02</text>
+<rect x="694" y="146" width="65" height="24" rx="4" fill="#20352a" stroke="#65836f"/>
+<text x="726" y="162" text-anchor="middle" font-size="11" fill="#dcebe1">kubelet</text>
+<path d="M759 158H804" stroke="#668b72"/>
+<text x="842" y="136" text-anchor="middle" font-size="10" fill="#a2b4aa">pods</text>
+<g ><rect x="806" y="146" width="22" height="24" rx="3" fill="#294734" stroke="#7b9f86"/><rect x="838" y="146" width="22" height="24" rx="3" fill="#294734" stroke="#7b9f86"/><rect x="870" y="146" width="22" height="24" rx="3" fill="#294734" stroke="#7b9f86"/></g>
+</g><g class="extra">
+<rect x="681" y="203" width="244" height="65" rx="7" fill="#16221c" stroke="#526b5d" stroke-dasharray="4 3"/>
+<text x="695" y="221" font-size="11" fill="#b2c9ba">node 03</text>
+<rect x="694" y="231" width="65" height="24" rx="4" fill="#20352a" stroke="#65836f"/>
+<text x="726" y="247" text-anchor="middle" font-size="11" fill="#dcebe1">kubelet</text>
+<path d="M759 243H804" stroke="#668b72"/>
+<text x="842" y="221" text-anchor="middle" font-size="10" fill="#a2b4aa">pods</text>
+<g class="extra-pods"><rect x="806" y="231" width="22" height="24" rx="3" fill="#294734" stroke="#7b9f86"/><rect x="838" y="231" width="22" height="24" rx="3" fill="#294734" stroke="#7b9f86"/><rect x="870" y="231" width="22" height="24" rx="3" fill="#294734" stroke="#7b9f86"/></g>
 </g>
-<g stroke-linejoin="round">
-<path d="M621 179L757 247L893 179L757 111Z" fill="#162422" stroke="#46675c"/>
-<path d="M621 148L757 216L893 148L757 80Z" fill="url(#plane)" stroke="#769e8d"/>
-<path d="M621 117L757 185L893 117L757 49Z" fill="url(#plane)" stroke="#a7f3c8" stroke-width="1.5"/>
-<path d="M621 117V179M757 185V247M893 117V179" stroke="#608575" stroke-dasharray="3 5"/>
-<path class="flow" d="M568 260H621L757 192L900 264" fill="none" stroke="#a7f3c8" stroke-width="1.5"/>
-<path d="M709 117L757 93L805 117L757 141Z" fill="#a7f3c8" fill-opacity=".15" stroke="#a7f3c8"/>
-<path d="M739 114V102A18 18 0 0 1 775 102V114" fill="none" stroke="#d4c5ff" stroke-width="3"/>
-<rect x="735" y="110" width="44" height="33" rx="6" fill="#152321" stroke="#d4c5ff" stroke-width="2"/>
-<circle cx="757" cy="123" r="3" fill="#d4c5ff"/>
-<path d="M757 126V133" stroke="#d4c5ff" stroke-width="2"/>
-<circle cx="568" cy="260" r="4" fill="#a7f3c8"/><circle cx="900" cy="264" r="4" fill="#d4c5ff"/>
-<circle cx="621" cy="117" r="4" fill="#a7f3c8"/><circle cx="893" cy="117" r="4" fill="#a7f3c8"/>
-</g>
-</g></svg>
+<circle class="packet watch1" r="2.5" fill="#aecfb7"/><circle class="packet watch2" r="2.5" fill="#aecfb7"/>
+<circle class="packet status1" r="2" fill="#b8b2d0"/><circle class="packet status2" r="2" fill="#b8b2d0"/>
+<g class="extra-traffic"><circle class="packet watch3" r="2.5" fill="#aecfb7"/><circle class="packet status3" r="2" fill="#b8b2d0"/></g>
+<circle cx="418" cy="286" r="2.5" fill="#aecfb7"/><text x="429" y="290" font-size="10" fill="#a2b4aa">API watch</text>
+<circle cx="503" cy="286" r="2.5" fill="#b8b2d0"/><text x="514" y="290" font-size="10" fill="#a2b4aa">status</text>
+<text x="923" y="290" text-anchor="end" font-size="10" fill="#a2b4aa">node autoscaling · illustrative</text>
+</g></g></svg>
