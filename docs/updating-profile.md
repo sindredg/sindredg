@@ -4,9 +4,9 @@ Edit README.md directly in GitHub or locally. No generator, action, or build ste
 
 ## Switch the main project
 
-Everything specific to the main project is between FEATURED:START and FEATURED:END: status, title, description, links, screenshot, results, stack, and expandable details. Replace that content together. The header and section graphics are independent of the project and need no edits.
+Everything specific to the main project is between FEATURED:START and FEATURED:END: status, title, description, links, results, stack, and expandable details. Replace that content together. The header and section graphics are independent of the project and need no edits.
 
-The screenshot, results row, stack paragraph, and details block are optional. Delete an entire optional element when it is not relevant. A project without a screenshot or measurements still works with just its title, description, and link inside the first table.
+The results row, stack paragraph, and details block are optional. Delete an entire optional element when it is not relevant. A project without measurements still works with just its title, description, and link inside the first table.
 
 To keep the former featured project, add its title, repository link, and short description as a Markdown bullet inside ARCHIVE:START. Remove any old archive entry for the new featured project if it would be redundant.
 
@@ -28,11 +28,9 @@ If you remove both the selected cards and the archive, remove the Selected work 
 
 - Use GitHub's Preview tab; expand Under the hood and Other projects.
 - Check that the navigation jumps to the right sections and all project links work.
-- Check the status, screenshot, metrics, and technology labels belong to the new project.
+- Check the status, metrics, and technology labels belong to the new project.
 - Check narrow and wide layouts. Keep card descriptions short so paired cards remain balanced.
 
 The graphics are local SVG files, with no remote badge service or font dependency. The header animation honors reduced-motion preferences. Project changes require editing only README.md.
 
-The header is a simplified Kubernetes illustration, not a live cluster dashboard. Green packets represent API watch updates; muted violet packets represent status reports. An additional node joins, runs pods, and leaves on a 16-second cycle. This is management communication, not workload traffic. Node autoscaling is shown as a separate process, not as the API server provisioning machines. Reduced-motion mode shows a static three-node cluster.
-
-Diagram references: [Kubernetes components](https://kubernetes.io/docs/concepts/overview/components/) and [Node autoscaling](https://kubernetes.io/docs/concepts/cluster-administration/node-autoscaling/).
+The header is a decorative abstract animation with no technology-specific labels. Its focus line is Infrastructure · Identity · Security. A third branch fades in and out over 18 seconds; reduced-motion preferences show a static composition. There are no component labels or live-status indicators to update.
