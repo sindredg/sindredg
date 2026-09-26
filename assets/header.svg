@@ -1,126 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="840" height="220" viewBox="0 0 840 220" role="img" aria-label="Sindre Grytebust, infrastructure and identity">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#16303f"/>
-      <stop offset="1" stop-color="#224154"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="72%" cy="22%" r="58%">
-      <stop offset="0" stop-color="#f2b134" stop-opacity="0.14"/>
-      <stop offset="1" stop-color="#f2b134" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#8aa3b1" opacity="0.13"/>
-    </pattern>
-    <clipPath id="card">
-      <rect width="840" height="220" rx="14"/>
-    </clipPath>
-  </defs>
-
-  <style>
-    /* requests fan out from the router to whichever instance is free */
-    .req  { offset-rotate: 0deg; animation: req 2.4s linear infinite; }
-    .req1 { offset-path: path("M470,110 L640,110 L720,51"); }
-    .req2 { offset-path: path("M470,110 L640,110 L720,89");  animation-delay: -0.8s; }
-    .req3 { offset-path: path("M470,110 L640,110 L720,127"); animation-delay: -1.6s; }
-    /* the fourth only runs while the extra instance is up */
-    .req4 { offset-path: path("M470,110 L640,110 L720,165"); animation: req4 8s linear infinite; }
-
-    /* responses travel back out the way they came */
-    .res  { offset-rotate: 0deg; animation: res 2.4s linear infinite; }
-    .res1 { offset-path: path("M720,89 L640,110 L470,110");  animation-delay: -0.4s; }
-    .res2 { offset-path: path("M720,127 L640,110 L470,110"); animation-delay: -1.7s; }
-
-    @keyframes req {
-      0%   { offset-distance: 0%;   opacity: 0; }
-      6%   { opacity: 1; }
-      92%  { opacity: 1; }
-      100% { offset-distance: 100%; opacity: 0; }
-    }
-    @keyframes res {
-      0%   { offset-distance: 0%;   opacity: 0; }
-      8%   { opacity: 0.85; }
-      90%  { opacity: 0.85; }
-      100% { offset-distance: 100%; opacity: 0; }
-    }
-    /* travels only in the window where the extra instance exists */
-    @keyframes req4 {
-      0%, 30%   { offset-distance: 0%;   opacity: 0; }
-      34%       { opacity: 1; }
-      60%       { opacity: 1; }
-      64%, 100% { offset-distance: 100%; opacity: 0; }
-    }
-
-    /* instances light up as a request lands */
-    .inst  { animation: hit 2.4s linear infinite; }
-    .inst2 { animation-delay: -0.8s; }
-    .inst3 { animation-delay: -1.6s; }
-    @keyframes hit {
-      0%, 88% { stroke: #4f6f82; }
-      93%     { stroke: #f2b134; }
-      100%    { stroke: #4f6f82; }
-    }
-
-    /* the pool scales up under load, then back down */
-    .scale { animation: scale 8s ease-in-out infinite; }
-    @keyframes scale {
-      0%, 26%   { opacity: 0; }
-      34%, 60%  { opacity: 1; }
-      68%, 100% { opacity: 0; }
-    }
-
-    .ping { transform-box: view-box; transform-origin: 640px 110px; animation: ping 2.4s ease-out infinite; }
-    @keyframes ping {
-      from { transform: scale(0.6); opacity: 0.5; }
-      to   { transform: scale(2.2); opacity: 0; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .req, .res, .ping, .inst, .scale { animation: none; }
-      .req, .res, .ping { opacity: 0; }
-      .scale { opacity: 1; }
-    }
-  </style>
-
-  <g clip-path="url(#card)">
-    <rect width="840" height="220" fill="url(#bg)"/>
-    <rect width="840" height="220" fill="url(#dots)"/>
-    <rect width="840" height="220" fill="url(#glow)"/>
-    <rect x="0.5" y="0.5" width="839" height="219" rx="13.5" fill="none" stroke="#4f6f82" stroke-opacity="0.5"/>
-  </g>
-
-  <g clip-path="url(#card)">
-    <!-- inbound traffic, and the fan-out to each instance -->
-    <g stroke="#4f6f82" stroke-width="1.5" fill="none">
-      <path d="M470,110 L626,110"/>
-      <path d="M654,110 L720,51" stroke-width="1.2" opacity="0.75"/>
-      <path d="M654,110 L720,89" stroke-width="1.2" opacity="0.75"/>
-      <path d="M654,110 L720,127" stroke-width="1.2" opacity="0.75"/>
-      <path class="scale" d="M654,110 L720,165" stroke-width="1.2" opacity="0.75"/>
-    </g>
-
-    <!-- the router: everything in and out passes through here -->
-    <circle class="ping" cx="640" cy="110" r="14" fill="none" stroke="#f2b134" stroke-width="1.5"/>
-    <path d="M640,95 L655,110 L640,125 L625,110 Z" fill="#1f3b4d" stroke="#e6eef2" stroke-width="1.5"/>
-
-    <!-- service instances; the fourth comes and goes with load -->
-    <g fill="#ffffff" fill-opacity="0.05" stroke="#4f6f82" stroke-width="1.5">
-      <rect class="inst" x="720" y="42" width="44" height="18" rx="4"/>
-      <rect class="inst inst2" x="720" y="80" width="44" height="18" rx="4"/>
-      <rect class="inst inst3" x="720" y="118" width="44" height="18" rx="4"/>
-      <rect class="scale" x="720" y="156" width="44" height="18" rx="4"/>
-    </g>
-
-    <circle class="req req1" r="3.5" fill="#f2b134"/>
-    <circle class="req req2" r="3.5" fill="#f2b134"/>
-    <circle class="req req3" r="3.5" fill="#f2b134"/>
-    <circle class="req req4" r="3.5" fill="#f2b134"/>
-    <circle class="res res1" r="2.8" fill="#c6d6df"/>
-    <circle class="res res2" r="2.8" fill="#c6d6df"/>
-  </g>
-
-  <g font-family="Segoe UI, Helvetica Neue, Arial, sans-serif">
-    <text x="44" y="96" font-size="40" font-weight="600" fill="#eef4f7" letter-spacing="-0.5">Sindre Grytebust</text>
-    <rect x="45" y="114" width="52" height="3" rx="1.5" fill="#f2b134"/>
-    <text x="44" y="150" font-size="12.5" fill="#8aa3b1" letter-spacing="0.4">CLOUD &#183; KUBERNETES &#183; TERRAFORM &#183; IDENTITY &#183; AUTOMATION</text>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img" aria-labelledby="title desc">
+<title id="title">Sindre Grytebust — Infrastructure. Identity. Security.</title>
+<desc id="desc">Mint typography and an abstract layered network on a midnight background.</desc>
+<defs>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#263437" stroke-opacity=".45"/></pattern>
+  <radialGradient id="glow"><stop stop-color="#22483f"/><stop offset="1" stop-color="#101719"/></radialGradient>
+  <linearGradient id="plane" x2="1" y2="1"><stop stop-color="#21433b"/><stop offset="1" stop-color="#111d20"/></linearGradient>
+  <clipPath id="clip"><rect width="960" height="320" rx="18"/></clipPath>
+</defs>
+<style>
+.flow {stroke-dasharray:5 12; animation:flow 8s linear infinite}
+@keyframes flow {to {stroke-dashoffset:-170}}
+@media(prefers-reduced-motion:reduce){.flow{animation:none}}
+</style>
+<g clip-path="url(#clip)">
+<rect width="960" height="320" fill="#101719"/>
+<ellipse cx="775" cy="155" rx="250" ry="240" fill="url(#glow)"/>
+<rect width="960" height="320" fill="url(#grid)"/>
+<path d="M0 0H960" stroke="#a7f3c8" stroke-width="4"/>
+<g font-family="Segoe UI,Arial,sans-serif">
+<text x="42" y="51" font-family="Consolas,monospace" font-size="14" letter-spacing="3" fill="#a7f3c8">SINDRE GRYTEBUST</text>
+<text x="39" y="126" font-size="56" font-weight="700" letter-spacing="-2" fill="#f0f5f2">Infrastructure.</text>
+<text x="39" y="192" font-size="56" font-weight="700" letter-spacing="-2" fill="#a7f3c8">Identity. Security.</text>
+<text x="42" y="236" font-size="16" fill="#aebfba">Built in the cloud. Tested in practice.</text>
+<text x="42" y="283" font-family="Consolas,monospace" font-size="11" letter-spacing="1.7" fill="#aebfba">TERRAFORM / KUBERNETES / ENTRA ID</text>
+</g>
+<g stroke-linejoin="round">
+<path d="M621 179L757 247L893 179L757 111Z" fill="#162422" stroke="#46675c"/>
+<path d="M621 148L757 216L893 148L757 80Z" fill="url(#plane)" stroke="#769e8d"/>
+<path d="M621 117L757 185L893 117L757 49Z" fill="url(#plane)" stroke="#a7f3c8" stroke-width="1.5"/>
+<path d="M621 117V179M757 185V247M893 117V179" stroke="#608575" stroke-dasharray="3 5"/>
+<path class="flow" d="M568 260H621L757 192L900 264" fill="none" stroke="#a7f3c8" stroke-width="1.5"/>
+<path d="M709 117L757 93L805 117L757 141Z" fill="#a7f3c8" fill-opacity=".15" stroke="#a7f3c8"/>
+<path d="M739 114V102A18 18 0 0 1 775 102V114" fill="none" stroke="#d4c5ff" stroke-width="3"/>
+<rect x="735" y="110" width="44" height="33" rx="6" fill="#152321" stroke="#d4c5ff" stroke-width="2"/>
+<circle cx="757" cy="123" r="3" fill="#d4c5ff"/>
+<path d="M757 126V133" stroke="#d4c5ff" stroke-width="2"/>
+<circle cx="568" cy="260" r="4" fill="#a7f3c8"/><circle cx="900" cy="264" r="4" fill="#d4c5ff"/>
+<circle cx="621" cy="117" r="4" fill="#a7f3c8"/><circle cx="893" cy="117" r="4" fill="#a7f3c8"/>
+</g>
+</g></svg>
