@@ -1,25 +1,34 @@
 # Updating the profile
 
-Edit `README.md` directly, locally or with GitHub's pencil button. No generator, workflow, or extra tools are required. The `<!-- ... -->` comments are editing guides and do not appear on the rendered profile.
+Edit README.md directly in GitHub or locally. No generator, action, or build step is needed. HTML comments are editing guides; they do not appear on the profile.
 
-## Switch the featured project
+## Switch the main project
 
-1. Find `FEATURED:START` and `FEATURED:END` in `README.md`.
-2. Replace the content between those comments: linked title, summary, status, evidence, links, and stack. Keep the section heading and comments.
-3. The results table, expandable details, screenshot, and stack line are optional. Delete any that do not suit the new project; the title, summary, and repository link are enough.
-4. To keep the previous project visible, add it as one row under `ARCHIVE:START`, using its old title/link and a short description. If the new featured project already has an archive row, remove that row to avoid duplication.
+Everything specific to the main project is between FEATURED:START and FEATURED:END: status, title, description, links, screenshot, results, stack, and expandable details. Replace that content together. The header and section graphics are independent of the project and need no edits.
 
-Everything specific to the featured project lives inside that block. The header, navigation, and footer do not need updating when you switch projects. Use an accurate status such as in progress or completed, and remove old screenshots, metrics, and links when replacing the feature.
+The screenshot, results table, stack paragraph, and details block are optional. Delete an entire optional element when it is not relevant. A project without a screenshot or measurements still works with just its title, description, and link inside the first table.
 
-## Change the other projects
+To keep the former featured project, add its title, repository link, and short description as a Markdown bullet inside ARCHIVE:START. Remove any old archive entry for the new featured project if it would be redundant.
 
-Between `ARCHIVE:START` and `ARCHIVE:END`, each table row is one project. Copy an existing row, change its link and description, and move it wherever you want. Delete a row to remove it. Escape any literal pipe in a title or description as `\|` so it does not create an extra column.
+## Change the selected cards
 
-If you remove every project, remove the entire “More projects” section and its navigation link too. Leave no empty table, blank rows, or visible placeholder copy.
+Between SELECTED:START and SELECTED:END, each td element is a self-contained card: decorative image, linked title, description, and stack. Edit those fields or copy a whole td block. Two cards sit inside each tr row.
 
-## Before saving
+For an odd number of cards, put the final card alone in a tr and change its td attributes to colspan="2" valign="top" (remove width="50%"). This gives it a full-width row instead of an empty placeholder. Remove an entire tr when deleting both its cards.
 
-- Open GitHub's **Preview** tab and expand **Inside the platform** (or its replacement).
-- Check the project links and any image you kept or added.
-- Confirm the status and results describe the new project, not the previous one.
-- Keep maintenance notes in HTML comments or this guide, outside the public profile copy.
+The four small illustrations are reusable motifs: assets/identity.svg, assets/network.svg, assets/hybrid.svg, and assets/containers.svg. They contain no project names or links. Choose any motif for a new card, or remove the img element entirely. Keep decorative image alt text empty; the card title supplies its accessible name.
+
+## Change the archive
+
+Between ARCHIVE:START and ARCHIVE:END, add, remove, or reorder individual Markdown bullets. To remove the archive entirely, delete everything between those markers, including the details wrapper. No empty slots or visible editing instructions are needed.
+
+If you remove both the selected cards and the archive, remove the Selected work heading, its named anchor, and the Selected work navigation link as well.
+
+## Preview before saving
+
+- Use GitHub's Preview tab; expand Under the hood and More from the workbench.
+- Check that the navigation jumps to the right sections and all project links work.
+- Check the status, screenshot, metrics, and technology labels belong to the new project.
+- Check narrow and wide layouts. Keep card descriptions short so paired cards remain balanced.
+
+The graphics are local SVG files, with no remote badge service or font dependency. The header animation honors reduced-motion preferences. Project changes require editing only README.md.
