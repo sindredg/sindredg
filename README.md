@@ -1,4 +1,4 @@
-<img src="assets/header.svg" alt="Sindre Grytebust — Infrastructure, Identity, Security" width="100%">
+<img src="assets/header.svg" alt="Sindre Grytebust: Infrastructure, Identity, Security" width="100%">
 
 <p align="center">
   <a href="#featured-project">Featured project</a> &nbsp; · &nbsp;
@@ -14,7 +14,7 @@
 <a name="featured-project"></a>
 <h2><img src="assets/featured.svg" alt="Featured project" width="100%"></h2>
 
-<!-- FEATURED:START — Replace this whole block to switch the main project. -->
+<!-- FEATURED:START. Replace this whole block to switch the main project. -->
 <table>
 <tr><td colspan="3">
 <br>
@@ -34,7 +34,7 @@
 <p><code>Terraform</code> <code>GKE</code> <code>GitHub Actions</code> <code>Cloud Armor</code> <code>Vertex AI</code> <code>Go</code></p>
 
 <details>
-<summary><strong>Under the hood</strong> — platform, delivery, and AI triage</summary>
+<summary><strong>Under the hood:</strong> platform, delivery, and AI triage</summary>
 
 - **Platform:** private nodes, custom VPC, Cloud NAT, Gateway API, managed TLS, and autoscaling across three zones.
 - **Delivery & operations:** keyless federation, immutable images, gated rollouts, default-deny networking, Cloud Armor, and failure drills.
@@ -48,7 +48,7 @@
 <a name="more-projects"></a>
 <h2><img src="assets/selected.svg" alt="Selected work" width="100%"></h2>
 
-<!-- SELECTED:START — Each td is one card. Keep two cards per tr, or use colspan="2" for one full-width card. -->
+<!-- SELECTED:START. Each td is one card. Keep two cards per tr, or use colspan="2" for one full-width card. -->
 <table>
 <tr>
 <td width="50%" valign="top">
@@ -81,16 +81,16 @@
 </table>
 <!-- SELECTED:END -->
 
-<!-- ARCHIVE:START — One Markdown bullet per project. Add, remove, or reorder freely. -->
+<!-- ARCHIVE:START. One Markdown bullet per project. Add, remove, or reorder freely. -->
 <details>
 <summary><strong>Other projects</strong></summary>
 
-- **[AI security triage](https://github.com/sindredg/ai-k8s)** — Rules, scoped model access, and an auditable verdict ledger for cloud security findings.
-- **[Identity governance](https://github.com/sindredg/Access-Control-and-Identity-Governance)** — Conditional Access, just-in-time administration with PIM, and access reviews.
-- **[Grafana SSO & provisioning](https://github.com/sindredg/entra-app-roles-sso-scim)** — OIDC sign-in, app-role mapping, and a custom SCIM bridge.
-- **[Sky](https://github.com/sindredg/sky)** — An application deployed on the Kubernetes platform.
-- **[OAuth 2.0 in .NET](https://github.com/sindredg/app-registrations-and-JWT-tokens)** — API authorization through scopes, app roles, groups, and token claims.
-- **[Azure MCP & RBAC](https://github.com/sindredg/claude-azure-mcp-rbac-design)** — Scoped, read-only Azure access for Claude, enforced through Azure RBAC.
+- **[AI security triage](https://github.com/sindredg/ai-k8s)**: Rules, scoped model access, and an auditable verdict ledger for cloud security findings.
+- **[Identity governance](https://github.com/sindredg/Access-Control-and-Identity-Governance)**: Conditional Access, just-in-time administration with PIM, and access reviews.
+- **[Grafana SSO & provisioning](https://github.com/sindredg/entra-app-roles-sso-scim)**: OIDC sign-in, app-role mapping, and a custom SCIM bridge.
+- **[Sky](https://github.com/sindredg/sky)**: An application deployed on the Kubernetes platform.
+- **[OAuth 2.0 in .NET](https://github.com/sindredg/app-registrations-and-JWT-tokens)**: API authorization through scopes, app roles, groups, and token claims.
+- **[Azure MCP & RBAC](https://github.com/sindredg/claude-azure-mcp-rbac-design)**: Scoped, read-only Azure access for Claude, enforced through Azure RBAC.
 
 </details>
 <!-- ARCHIVE:END -->
