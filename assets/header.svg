@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="240" viewBox="0 0 960 240" role="img" aria-labelledby="title desc">
-  <title id="title">Sindre Grytebust — Infrastructure · Identity · Security</title>
-  <desc id="desc">A quiet abstract network of connected shapes, with slow moving points and a gently appearing branch.</desc>
+  <title id="title">Sindre Grytebust: Infrastructure · Identity · Security</title>
+  <desc id="desc">An abstract Kubernetes control plane sending work to three nodes, with each node reporting status back to the API server.</desc>
   <defs>
     <radialGradient id="wash" cx="76%" cy="48%" r="58%">
       <stop stop-color="#253e32" stop-opacity=".45"/>
@@ -11,14 +11,19 @@
   </defs>
   <style>
     .point { offset-rotate:0deg; opacity:0; animation:travel 6s linear infinite; }
-    .upper { offset-path:path('M492 120 L611 120 C702 120 696 59 792 59'); }
-    .middle { offset-path:path('M492 120 L830 120'); animation-delay:-3s; }
-    .return { offset-path:path('M792 67 C698 67 705 128 643 128 L492 128'); animation-delay:-1.5s; }
-    .lower { offset-path:path('M643 120 C702 120 696 181 792 181'); animation-delay:-2s; }
+    .client { offset-path:path('M492 120 L600 120'); animation-duration:3s; }
+    .upper { offset-path:path('M654 120 C712 120 716 59 792 59'); }
+    .middle { offset-path:path('M654 120 L830 120'); animation-delay:-3s; }
+    .lower { offset-path:path('M654 120 C712 120 716 181 792 181'); animation-delay:-2s; }
+    .upper-back { offset-path:path('M792 67 C726 67 716 124 656 124'); animation-delay:-1.5s; }
+    .middle-back { offset-path:path('M830 128 L648 128'); animation-delay:-4.5s; }
+    .lower-back { offset-path:path('M792 173 C726 173 716 116 656 116'); animation-delay:-5s; }
+    .api { animation:pulse 2s ease-in-out infinite; }
     .branch { animation:expand 18s ease-in-out infinite; }
     @keyframes travel { 0%{offset-distance:0%;opacity:0} 12%,82%{opacity:.8} 100%{offset-distance:100%;opacity:0} }
+    @keyframes pulse { 0%,100%{fill-opacity:.5} 50%{fill-opacity:.85} }
     @keyframes expand { 0%,15%,95%,100%{opacity:0} 35%,75%{opacity:1} }
-    @media(prefers-reduced-motion:reduce) { .point {animation:none;display:none} .branch {animation:none;opacity:1} }
+    @media(prefers-reduced-motion:reduce) { .point {animation:none;display:none} .api {animation:none} .branch {animation:none;opacity:1} }
   </style>
   <g clip-path="url(#frame)">
     <rect width="960" height="240" fill="#111a18"/>
@@ -29,13 +34,13 @@
       <text x="42" y="145" font-size="17" font-weight="400" fill="#adc3b5">Infrastructure · Identity · Security</text>
     </g>
     <g fill="none" stroke-width="1.2">
-      <path d="M492 120H611C702 120 696 59 792 59M643 120H830" stroke="#526f5e"/>
-      <path d="M792 67C698 67 705 128 643 128H492" stroke="#706d88" stroke-opacity=".45"/>
+      <path d="M492 120H830M654 120C712 120 716 59 792 59" stroke="#526f5e"/>
+      <path d="M792 67C726 67 716 124 656 124M830 128H648" stroke="#706d88" stroke-opacity=".45"/>
       <circle cx="627" cy="120" r="44" stroke="#536d5e" stroke-opacity=".2"/>
     </g>
     <circle cx="492" cy="120" r="4" fill="#99b5a2"/>
     <rect x="608" y="101" width="38" height="38" rx="9" transform="rotate(45 627 120)" fill="#1d3025" stroke="#91ad99" stroke-width="1.2"/>
-    <rect x="620" y="113" width="14" height="14" rx="4" fill="#aecbb6" fill-opacity=".65"/>
+    <rect class="api" x="620" y="113" width="14" height="14" rx="4" fill="#aecbb6" fill-opacity=".65"/>
     <g fill="#18271f" stroke="#66816f" stroke-width="1">
       <rect x="792" y="39" width="66" height="40" rx="10"/>
       <rect x="830" y="100" width="66" height="40" rx="10"/>
@@ -45,13 +50,17 @@
       <circle cx="849" cy="120" r="2.5"/><circle cx="863" cy="120" r="2.5"/><circle cx="877" cy="120" r="2.5"/>
     </g>
     <g class="branch">
-      <path d="M643 120C702 120 696 181 792 181" fill="none" stroke="#526f5e" stroke-width="1.2"/>
+      <path d="M654 120C712 120 716 181 792 181" fill="none" stroke="#526f5e" stroke-width="1.2"/>
+      <path d="M792 173C726 173 716 116 656 116" fill="none" stroke="#706d88" stroke-opacity=".45" stroke-width="1.2"/>
       <rect x="792" y="161" width="66" height="40" rx="10" fill="#18271f" stroke="#66816f"/>
       <g fill="#a8c1b0" fill-opacity=".65"><circle cx="811" cy="181" r="2.5"/><circle cx="825" cy="181" r="2.5"/><circle cx="839" cy="181" r="2.5"/></g>
       <circle class="point lower" r="2.5" fill="#b5d0bc"/>
+      <circle class="point lower-back" r="2" fill="#b8b1ce"/>
     </g>
+    <circle class="point client" r="2.5" fill="#b5d0bc"/>
     <circle class="point upper" r="2.5" fill="#b5d0bc"/>
     <circle class="point middle" r="2.5" fill="#b5d0bc"/>
-    <circle class="point return" r="2" fill="#b8b1ce"/>
+    <circle class="point upper-back" r="2" fill="#b8b1ce"/>
+    <circle class="point middle-back" r="2" fill="#b8b1ce"/>
   </g>
 </svg>
