@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="240" viewBox="0 0 960 240" role="img" aria-labelledby="title desc">
-  <title id="title">Sindre Grytebust: Infrastructure, identity, security</title>
-  <desc id="desc">An abstract Kubernetes control plane sending work to three nodes, with each node reporting status back to the API server.</desc>
+  <title id="title">Sindre Grytebust</title>
+  <desc id="desc">An abstract cluster that heals itself. A control plane sends work to three nodes. One node fails, its workloads move to the other two, and when it recovers the load is balanced again.</desc>
   <defs>
     <radialGradient id="wash" cx="76%" cy="48%" r="58%">
       <stop stop-color="#253e32" stop-opacity=".45"/>
@@ -19,20 +19,33 @@
     .middle-back { offset-path:path('M830 128 L648 128'); animation-delay:-4.5s; }
     .lower-back { offset-path:path('M792 173 C726 173 716 116 656 116'); animation-delay:-5s; }
     .api { animation:pulse 2s ease-in-out infinite; }
-    .branch { animation:expand 18s ease-in-out infinite; }
+
+    /* One 18 s cycle: steady, lower node fails, pods move, node recovers, load rebalances. */
+    .down { animation:down 18s ease-in-out infinite; }
+    .fault { opacity:0; animation:fault 18s ease-in-out infinite; }
+    .cut { animation:cut 18s ease-in-out infinite; }
+    .evicted { animation:evicted 18s ease-in-out infinite; }
+    .moved { opacity:0; animation:moved 18s ease-in-out infinite; }
+    .d1 { animation-delay:.25s; }
+    .d2 { animation-delay:.5s; }
     @keyframes travel { 0%{offset-distance:0%;opacity:0} 12%,82%{opacity:.8} 100%{offset-distance:100%;opacity:0} }
     @keyframes pulse { 0%,100%{fill-opacity:.5} 50%{fill-opacity:.85} }
-    @keyframes expand { 0%,15%,95%,100%{opacity:0} 35%,75%{opacity:1} }
-    @media(prefers-reduced-motion:reduce) { .point {animation:none;display:none} .api {animation:none} .branch {animation:none;opacity:1} }
+    @keyframes down { 0%,27%{opacity:1} 30%,66%{opacity:.3} 69%,100%{opacity:1} }
+    @keyframes fault { 0%,27%{opacity:0} 29%,62%{opacity:.9} 67%,100%{opacity:0} }
+    @keyframes cut { 0%,27%{opacity:1} 28.5%,68%{opacity:0} 71%,100%{opacity:1} }
+    @keyframes evicted { 0%,27%{opacity:1} 29%,74%{opacity:0} 77%,100%{opacity:1} }
+    @keyframes moved { 0%,33%{opacity:0} 36%,73%{opacity:1} 76%,100%{opacity:0} }
+    @media(prefers-reduced-motion:reduce) {
+      .point {animation:none;display:none}
+      .api,.down,.cut,.fault,.evicted,.moved {animation:none}
+    }
   </style>
   <g clip-path="url(#frame)">
     <rect width="960" height="240" fill="#111a18"/>
     <rect width="960" height="240" fill="url(#wash)"/>
     <path d="M466 20H940V220H466Z" fill="url(#dots)"/>
-    <g font-family="Segoe UI,Arial,sans-serif">
-      <text x="42" y="109" font-size="27" font-weight="500" fill="#e0e9e4">Sindre Grytebust</text>
-      <text x="42" y="145" font-size="17" font-weight="400" fill="#adc3b5">Infrastructure, identity, security</text>
-    </g>
+    <text x="42" y="130" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="500" fill="#e0e9e4">Sindre Grytebust</text>
+
     <g fill="none" stroke-width="1.2">
       <path d="M492 120H830M654 120C712 120 716 59 792 59" stroke="#526f5e"/>
       <path d="M792 67C726 67 716 124 656 124M830 128H648" stroke="#706d88" stroke-opacity=".45"/>
@@ -41,22 +54,35 @@
     <circle cx="492" cy="120" r="4" fill="#99b5a2"/>
     <rect x="608" y="101" width="38" height="38" rx="9" transform="rotate(45 627 120)" fill="#1d3025" stroke="#91ad99" stroke-width="1.2"/>
     <rect class="api" x="620" y="113" width="14" height="14" rx="4" fill="#aecbb6" fill-opacity=".65"/>
+
     <g fill="#18271f" stroke="#66816f" stroke-width="1">
-      <rect x="792" y="39" width="66" height="40" rx="10"/>
-      <rect x="830" y="100" width="66" height="40" rx="10"/>
+      <rect x="792" y="39" width="92" height="40" rx="10"/>
+      <rect x="830" y="100" width="92" height="40" rx="10"/>
     </g>
     <g fill="#a8c1b0" fill-opacity=".65">
       <circle cx="811" cy="59" r="2.5"/><circle cx="825" cy="59" r="2.5"/><circle cx="839" cy="59" r="2.5"/>
       <circle cx="849" cy="120" r="2.5"/><circle cx="863" cy="120" r="2.5"/><circle cx="877" cy="120" r="2.5"/>
     </g>
-    <g class="branch">
+    <g fill="#a8c1b0" fill-opacity=".65">
+      <circle class="moved" cx="853" cy="59" r="2.5"/>
+      <circle class="moved d1" cx="891" cy="120" r="2.5"/>
+      <circle class="moved d2" cx="905" cy="120" r="2.5"/>
+    </g>
+
+    <g class="down">
       <path d="M654 120C712 120 716 181 792 181" fill="none" stroke="#526f5e" stroke-width="1.2"/>
       <path d="M792 173C726 173 716 116 656 116" fill="none" stroke="#706d88" stroke-opacity=".45" stroke-width="1.2"/>
-      <rect x="792" y="161" width="66" height="40" rx="10" fill="#18271f" stroke="#66816f"/>
-      <g fill="#a8c1b0" fill-opacity=".65"><circle cx="811" cy="181" r="2.5"/><circle cx="825" cy="181" r="2.5"/><circle cx="839" cy="181" r="2.5"/></g>
-      <circle class="point lower" r="2.5" fill="#b5d0bc"/>
-      <circle class="point lower-back" r="2" fill="#b8b1ce"/>
+      <rect x="792" y="161" width="92" height="40" rx="10" fill="#18271f" stroke="#66816f"/>
+      <g class="cut">
+        <circle class="point lower" r="2.5" fill="#b5d0bc"/>
+        <circle class="point lower-back" r="2" fill="#b8b1ce"/>
+      </g>
     </g>
+    <rect class="fault" x="792" y="161" width="92" height="40" rx="10" fill="none" stroke="#c9957a" stroke-width="1.2" stroke-dasharray="4 4"/>
+    <g fill="#a8c1b0" fill-opacity=".65">
+      <circle class="evicted" cx="811" cy="181" r="2.5"/><circle class="evicted d1" cx="825" cy="181" r="2.5"/><circle class="evicted d2" cx="839" cy="181" r="2.5"/>
+    </g>
+
     <circle class="point client" r="2.5" fill="#b5d0bc"/>
     <circle class="point upper" r="2.5" fill="#b5d0bc"/>
     <circle class="point middle" r="2.5" fill="#b5d0bc"/>
