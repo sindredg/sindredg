@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="240" viewBox="0 0 960 240" role="img" aria-labelledby="title desc">
-  <title id="title">Sindre Grytebust: Infrastructure · Identity · Security</title>
+  <title id="title">Sindre Grytebust: Infrastructure, identity, security</title>
   <desc id="desc">An abstract Kubernetes control plane sending work to three nodes, with each node reporting status back to the API server.</desc>
   <defs>
     <radialGradient id="wash" cx="76%" cy="48%" r="58%">
@@ -31,7 +31,7 @@
     <path d="M466 20H940V220H466Z" fill="url(#dots)"/>
     <g font-family="Segoe UI,Arial,sans-serif">
       <text x="42" y="109" font-size="27" font-weight="500" fill="#e0e9e4">Sindre Grytebust</text>
-      <text x="42" y="145" font-size="17" font-weight="400" fill="#adc3b5">Infrastructure · Identity · Security</text>
+      <text x="42" y="145" font-size="17" font-weight="400" fill="#adc3b5">Infrastructure, identity, security</text>
     </g>
     <g fill="none" stroke-width="1.2">
       <path d="M492 120H830M654 120C712 120 716 59 792 59" stroke="#526f5e"/>

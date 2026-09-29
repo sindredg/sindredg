@@ -1,6 +1,14 @@
 # Updating the profile
 
-Edit README.md directly in GitHub or locally. No generator, action, or build step is needed. HTML comments are editing guides; they do not appear on the profile.
+Edit README.md directly in GitHub or locally. No action or build step is needed; the only generated file is the in-progress milestone graphic. HTML comments are editing guides; they do not appear on the profile.
+
+## Update the in-progress project
+
+The project under construction sits between IN-PROGRESS:START and IN-PROGRESS:END: title, description, milestone graphic, status line, links, and stack.
+
+When a k8s-dr milestone completes, run `python3 scripts/progress-track.py N` from the repository root, where N is the number of completed milestones in k8s-dr's plan.md. It rewrites assets/k8s-dr-progress.svg. Update the status line under the graphic and the image alt text to match.
+
+When the project finishes, move it into FEATURED or the archive, then delete the whole in-progress block, its heading and anchor, and the In progress navigation link. To feature a different ongoing project, replace the block; drop the graphic or adapt the labels and region ranges at the top of the script.
 
 ## Switch the main project
 
@@ -31,6 +39,6 @@ If you remove both the selected cards and the archive, remove the Selected work 
 - Check the status, metrics, and technology labels belong to the new project.
 - Check narrow and wide layouts. Keep card descriptions short so paired cards remain balanced.
 
-The graphics are local SVG files, with no remote badge service or font dependency. The header animation honors reduced-motion preferences. Project changes require editing only README.md.
+Section headings carry a small status mark: a half-filled circle for work in progress and a filled circle for completed work. The graphics are local SVG files, with no remote badge service or font dependency. The header animation honors reduced-motion preferences. Project changes require editing only README.md.
 
-The header is a decorative abstract animation with no technology-specific labels. Its focus line is Infrastructure · Identity · Security. A third branch fades in and out over 18 seconds; reduced-motion preferences show a static composition. There are no component labels or live-status indicators to update.
+The header is a decorative abstract animation with no technology-specific labels. Its focus line is Infrastructure, identity, security. A third branch fades in and out over 18 seconds; reduced-motion preferences show a static composition. There are no component labels or live-status indicators to update.
