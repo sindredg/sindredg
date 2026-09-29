@@ -41,4 +41,4 @@ If you remove both the selected cards and the archive, remove the Selected work 
 
 Section headings carry a small status mark: a half-filled circle for work in progress and a filled circle for completed work. The graphics are local SVG files, with no remote badge service or font dependency. The header animation honors reduced-motion preferences. Project changes require editing only README.md.
 
-The header is a decorative abstract animation with no technology-specific labels. Its focus line is Infrastructure, identity, security. A third branch fades in and out over 18 seconds; reduced-motion preferences show a static composition. There are no component labels or live-status indicators to update.
+The header shows only the name, with a decorative abstract animation and no technology-specific labels. Over an 18-second cycle, a control plane sends work to three nodes; the lower node fails, its workloads move to the other two, and after it recovers the load rebalances. Reduced-motion preferences show a static, healthy cluster. There are no labels or live-status indicators to update.
