@@ -19,9 +19,9 @@
 <h3><a href="https://github.com/sindredg/k8s-dr">Kubernetes disaster recovery</a></h3>
 <p>Recovering a stateful service after losing a whole region. Gitea and PostgreSQL run on a kubeadm cluster built on VMs. A drill rebuilds the cluster from code in a second region, restores an offsite backup, and measures downtime and data loss.</p>
 
-<a href="https://github.com/sindredg/k8s-dr/blob/main/plan.md"><img src="assets/k8s-dr-progress.svg" alt="Milestones 0 to 3 complete in the primary region. Next: offsite backups, then cold recovery in a second region, a disaster drill, and faster recovery." width="100%"></a>
+<a href="https://github.com/sindredg/k8s-dr/blob/main/plan.md"><img src="assets/k8s-dr-progress.svg" alt="Milestones 0 to 4 complete: the primary region runs Gitea with hourly, encrypted offsite backups that restore cleanly. Next: cold recovery in a second region, then a disaster drill and faster recovery." width="100%"></a>
 
-<p><sub>Four of eight milestones complete. Next: consistent, offsite backups that restore cleanly.</sub></p>
+<p><sub>Five of eight milestones complete. Hourly, encrypted offsite backups restore in under a minute. Next: cold recovery in a second region.</sub></p>
 <p><a href="https://github.com/sindredg/k8s-dr"><strong>Follow the project</strong></a> &emsp; <a href="https://github.com/sindredg/k8s-dr/blob/main/plan.md">Plan</a> &emsp; <a href="https://github.com/sindredg/k8s-dr/tree/main/docs/decisions">Decisions</a> &emsp; <a href="https://github.com/sindredg/k8s-dr/tree/main/docs/worklogs">Worklogs</a></p>
 
 <p><code>Google Cloud</code> <code>Terraform</code> <code>Ansible</code> <code>kubeadm</code> <code>Flux</code> <code>SOPS</code> <code>PostgreSQL</code> <code>Gitea</code></p>
