@@ -1,8 +1,9 @@
-<img src="assets/header.svg" alt="Sindre Grytebust: Infrastructure, Identity, Security" width="100%">
+<img src="assets/header.svg" alt="Sindre Grytebust: infrastructure, identity, security" width="100%">
 
 <p align="center">
-  <a href="#featured-project">Featured project</a> &nbsp; · &nbsp;
-  <a href="#more-projects">Selected work</a> &nbsp; · &nbsp;
+  <a href="#in-progress">In progress</a> &emsp;&emsp;
+  <a href="#featured-project">Featured project</a> &emsp;&emsp;
+  <a href="#more-projects">Selected work</a> &emsp;&emsp;
   <a href="https://github.com/sindredg?tab=repositories">All repositories</a>
 </p>
 
@@ -11,6 +12,23 @@
 <br>
 
 <!-- Editing guide: docs/updating-profile.md. All project content is inside the marked blocks. -->
+<a name="in-progress"></a>
+<h2><img src="assets/in-progress.svg" alt="In progress" width="100%"></h2>
+
+<!-- IN-PROGRESS:START. Replace or delete this whole block. Regenerate assets/k8s-dr-progress.svg when a milestone completes. -->
+<h3><a href="https://github.com/sindredg/k8s-dr">Kubernetes disaster recovery</a></h3>
+<p>Recovering a stateful service after losing a whole region. Gitea and PostgreSQL run on a kubeadm cluster built on VMs. A drill rebuilds the cluster from code in a second region, restores an offsite backup, and measures downtime and data loss.</p>
+
+<a href="https://github.com/sindredg/k8s-dr/blob/main/plan.md"><img src="assets/k8s-dr-progress.svg" alt="Milestones 0 to 3 complete in the primary region. Next: offsite backups, then cold recovery in a second region, a disaster drill, and faster recovery." width="100%"></a>
+
+<p><sub>Four of eight milestones complete. Next: consistent, offsite backups that restore cleanly.</sub></p>
+<p><a href="https://github.com/sindredg/k8s-dr"><strong>Follow the project</strong></a> &emsp; <a href="https://github.com/sindredg/k8s-dr/blob/main/plan.md">Plan</a> &emsp; <a href="https://github.com/sindredg/k8s-dr/tree/main/docs/decisions">Decisions</a> &emsp; <a href="https://github.com/sindredg/k8s-dr/tree/main/docs/worklogs">Worklogs</a></p>
+
+<p><code>Google Cloud</code> <code>Terraform</code> <code>Ansible</code> <code>kubeadm</code> <code>Flux</code> <code>SOPS</code> <code>PostgreSQL</code> <code>Gitea</code></p>
+<!-- IN-PROGRESS:END -->
+
+<br>
+
 <a name="featured-project"></a>
 <h2><img src="assets/featured.svg" alt="Featured project" width="100%"></h2>
 
@@ -18,16 +36,16 @@
 <table>
 <tr><td colspan="3">
 <br>
-<sub>Completed lab &nbsp; / &nbsp; Google Cloud + Kubernetes</sub>
+<sub>Completed lab on Google Cloud</sub>
 <h2>Kubernetes platform &amp; AI security triage</h2>
 <p>A private GKE cluster serving public workloads. Keyless delivery, measured rollouts, failure drills, and an AI agent that triages security findings.</p>
-<p><a href="https://github.com/sindredg/k8-lab"><strong>Explore the project</strong></a> &nbsp; · &nbsp; <a href="https://github.com/sindredg/k8-lab/blob/main/decisions.md">Decisions</a> &nbsp; · &nbsp; <a href="https://github.com/sindredg/k8-lab/tree/main/worklog">Worklogs</a> &nbsp; · &nbsp; <a href="https://github.com/sindredg/k8-lab/blob/main/worklog/shutdown.md">Shutdown notes</a></p>
+<p><a href="https://github.com/sindredg/k8-lab"><strong>Explore the project</strong></a> &emsp; <a href="https://github.com/sindredg/k8-lab/blob/main/decisions.md">Decisions</a> &emsp; <a href="https://github.com/sindredg/k8-lab/tree/main/worklog">Worklogs</a> &emsp; <a href="https://github.com/sindredg/k8-lab/blob/main/worklog/shutdown.md">Shutdown notes</a></p>
 <p><sub>Infrastructure retired in September 2026; code, worklogs, and validation notes remain.</sub></p>
 </td></tr>
 <tr>
-<td width="33%" align="center"><h3>125 req/s</h3><sub>8 Pods · no failures</sub><br><br></td>
-<td width="33%" align="center"><h3>70.5 s</h3><sub>Median deployment</sub><br><br></td>
-<td width="33%" align="center"><h3>72 → 0</h3><sub>Rollout connection failures</sub><br><br></td>
+<td width="33%" valign="top"><strong>125 req/s</strong> across 8 Pods with no failures</td>
+<td width="33%" valign="top"><strong>70.5 s</strong> median deployment time</td>
+<td width="33%" valign="top"><strong>72 to 0</strong> connection failures during rollouts</td>
 </tr>
 </table>
 
@@ -55,13 +73,13 @@
 <img src="assets/identity.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/cross-cloud-entra-aws">Entra ID → AWS</a></h3>
 <p>Workforce identity across clouds. Federation, SCIM provisioning, and governed access to AWS.</p>
-<sub>ENTRA ID &nbsp; / &nbsp; AWS &nbsp; / &nbsp; TERRAFORM</sub><br><br>
+<sub>Entra ID, AWS, Terraform</sub><br><br>
 </td>
 <td width="50%" valign="top">
 <img src="assets/network.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/hybrid-network-az">Azure hybrid networking</a></h3>
 <p>Hub-and-spoke networking with an encrypted cross-premises tunnel, private endpoints, and two-way DNS.</p>
-<sub>AZURE &nbsp; / &nbsp; VPN &nbsp; / &nbsp; PRIVATE LINK</sub><br><br>
+<sub>Azure, VPN, Private Link</sub><br><br>
 </td>
 </tr>
 <tr>
@@ -69,13 +87,13 @@
 <img src="assets/hybrid.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/two-site-hybrid-identity">Two-site hybrid identity</a></h3>
 <p>A two-site Active Directory forest synced to Entra ID, with hybrid endpoints and policy-enforced security baselines.</p>
-<sub>AD DS &nbsp; / &nbsp; ENTRA ID &nbsp; / &nbsp; POWERSHELL</sub><br><br>
+<sub>AD DS, Entra ID, PowerShell</sub><br><br>
 </td>
 <td width="50%" valign="top">
 <img src="assets/containers.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/container-app-in-azure">Azure Container Apps</a></h3>
 <p>A public web tier and private API, with passwordless image pulls, scale-to-zero, and automated delivery.</p>
-<sub>TERRAFORM &nbsp; / &nbsp; CONTAINERS &nbsp; / &nbsp; CI/CD</sub><br><br>
+<sub>Terraform, containers, CI/CD</sub><br><br>
 </td>
 </tr>
 </table>
