@@ -1,11 +1,12 @@
 <img src="assets/header.svg" alt="Sindre Grytebust" width="100%">
 
 <p align="center">
-  <a href="#more-projects">Selected work</a> &emsp;&emsp;
-  <a href="https://github.com/sindredg?tab=repositories">All repositories</a>
+  <a href="#more-projects"><img src="assets/nav-selected.svg" alt="Selected work" height="40"></a>
+  &nbsp;
+  <a href="https://github.com/sindredg?tab=repositories"><img src="assets/nav-repositories.svg" alt="All repositories" height="40"></a>
 </p>
 
-<p align="center">Cloud platforms and the identity systems around them.<br><sub>Build notes, architecture decisions, testing, and troubleshooting.</sub></p>
+<p align="center"><sub>Cloud platforms and the identity systems around them.<br>Build notes, architecture decisions, testing, and troubleshooting.</sub></p>
 
 <br>
 
