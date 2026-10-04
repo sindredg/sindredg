@@ -1,7 +1,6 @@
 <img src="assets/header.svg" alt="Sindre Grytebust" width="100%">
 
 <p align="center">
-  <a href="#in-progress">In progress</a> &emsp;&emsp;
   <a href="#featured-project">Featured project</a> &emsp;&emsp;
   <a href="#more-projects">Selected work</a> &emsp;&emsp;
   <a href="https://github.com/sindredg?tab=repositories">All repositories</a>
@@ -12,23 +11,6 @@
 <br>
 
 <!-- Editing guide: docs/updating-profile.md. All project content is inside the marked blocks. -->
-<a name="in-progress"></a>
-<h2><img src="assets/in-progress.svg" alt="In progress" width="100%"></h2>
-
-<!-- IN-PROGRESS:START. Replace or delete this whole block. Regenerate assets/k8s-dr-progress.svg when a milestone completes. -->
-<h3><a href="https://github.com/sindredg/k8s-dr">Kubernetes disaster recovery</a></h3>
-<p>Recovering a stateful service after losing a whole region. Gitea and PostgreSQL run on a kubeadm cluster built on VMs. A drill rebuilds the cluster from code in a second region, restores an offsite backup, and measures downtime and data loss.</p>
-
-<a href="https://github.com/sindredg/k8s-dr/blob/main/plan.md"><img src="assets/k8s-dr-progress.svg" alt="Milestones 0 to 4 complete: the primary region runs Gitea with hourly, encrypted offsite backups that restore cleanly. Next: cold recovery in a second region, then a disaster drill and faster recovery." width="100%"></a>
-
-<p><sub>Five of eight milestones complete. Hourly, encrypted offsite backups restore in under a minute. Next: cold recovery in a second region.</sub></p>
-<p><a href="https://github.com/sindredg/k8s-dr"><strong>Follow the project</strong></a> &emsp; <a href="https://github.com/sindredg/k8s-dr/blob/main/plan.md">Plan</a> &emsp; <a href="https://github.com/sindredg/k8s-dr/tree/main/docs/decisions">Decisions</a> &emsp; <a href="https://github.com/sindredg/k8s-dr/tree/main/docs/worklogs">Worklogs</a></p>
-
-<p><code>Google Cloud</code> <code>Terraform</code> <code>Ansible</code> <code>kubeadm</code> <code>Flux</code> <code>SOPS</code> <code>PostgreSQL</code> <code>Gitea</code></p>
-<!-- IN-PROGRESS:END -->
-
-<br>
-
 <a name="featured-project"></a>
 <h2><img src="assets/featured.svg" alt="Featured project" width="100%"></h2>
 
@@ -37,26 +19,26 @@
 <tr><td colspan="3">
 <br>
 <sub>Completed lab on Google Cloud</sub>
-<h2>Kubernetes platform &amp; AI security triage</h2>
-<p>A private GKE cluster serving public workloads. Keyless delivery, measured rollouts, failure drills, and an AI agent that triages security findings.</p>
-<p><a href="https://github.com/sindredg/k8-lab"><strong>Explore the project</strong></a> &emsp; <a href="https://github.com/sindredg/k8-lab/blob/main/decisions.md">Decisions</a> &emsp; <a href="https://github.com/sindredg/k8-lab/tree/main/worklog">Worklogs</a> &emsp; <a href="https://github.com/sindredg/k8-lab/blob/main/worklog/shutdown.md">Shutdown notes</a></p>
-<p><sub>Infrastructure retired in September 2026; code, worklogs, and validation notes remain.</sub></p>
+<h2>Kubernetes disaster recovery</h2>
+<p>Recovering a stateful service after losing a whole region. Gitea and PostgreSQL run on a kubeadm cluster built on VMs. Three drills stopped the primary region, rebuilt the cluster from code in a second region, restored an offsite backup, and moved the public name to it.</p>
+<p><a href="https://github.com/sindredg/k8s-dr"><strong>Explore the project</strong></a> &emsp; <a href="https://github.com/sindredg/k8s-dr#results">Results</a> &emsp; <a href="https://github.com/sindredg/k8s-dr/tree/main/docs/decisions">Decisions</a> &emsp; <a href="https://github.com/sindredg/k8s-dr/tree/main/docs/worklogs">Worklogs</a> &emsp; <a href="https://github.com/sindredg/k8s-dr/blob/main/docs/runbooks/regional-recovery.md">Recovery runbook</a></p>
+<p><sub>All eight milestones complete in October 2026. Targets: recovery within 4 hours, at most 2 hours of data lost.</sub></p>
 </td></tr>
 <tr>
-<td width="33%" valign="top"><strong>125 req/s</strong> across 8 Pods with no failures</td>
-<td width="33%" valign="top"><strong>70.5 s</strong> median deployment time</td>
-<td width="33%" valign="top"><strong>72 to 0</strong> connection failures during rollouts</td>
+<td width="33%" valign="top"><strong>17 to 19 min</strong> from the first failed probe to a recovered service, in three drills</td>
+<td width="33%" valign="top"><strong>10 min</strong> of data lost in the last drill, with backups every 15 minutes</td>
+<td width="33%" valign="top"><strong>Under 30 s</strong> to restore a backup set; building the cluster takes the rest</td>
 </tr>
 </table>
 
-<p><code>Terraform</code> <code>GKE</code> <code>GitHub Actions</code> <code>Cloud Armor</code> <code>Vertex AI</code> <code>Go</code></p>
+<p><code>Google Cloud</code> <code>Terraform</code> <code>Ansible</code> <code>kubeadm</code> <code>Flux</code> <code>SOPS</code> <code>PostgreSQL</code> <code>Gitea</code></p>
 
 <details>
-<summary><strong>Under the hood:</strong> platform, delivery, and AI triage</summary>
+<summary><strong>Under the hood:</strong> rebuild, backups, and the drill</summary>
 
-- **Platform:** private nodes, custom VPC, Cloud NAT, Gateway API, managed TLS, and autoscaling across three zones.
-- **Delivery & operations:** keyless federation, immutable images, gated rollouts, default-deny networking, Cloud Armor, and failure drills.
-- **[AI triage](https://github.com/sindredg/ai-k8s):** Security Command Center findings flow through Pub/Sub to a worker with four scoped grants. Rules run before Vertex AI; verdicts go to an append-only ledger.
+- **Rebuild from code:** one Terraform module for both regions, Ansible and kubeadm for the cluster, and Flux with SOPS for everything on it. The recovery region has no VMs until a drill.
+- **Backups:** PostgreSQL and the Gitea volume captured at one consistent point, encrypted with age, and stored in another region. The writer cannot delete or overwrite a set, and a restore verifies every digest first.
+- **The drill:** an external uptime check starts the clock, a write every five minutes measures data loss, and each stage is timed. A DNS change moves the public name, and the returning primary is fenced from the backups.
 
 </details>
 <!-- FEATURED:END -->
@@ -68,6 +50,13 @@
 
 <!-- SELECTED:START. Each td is one card. Keep two cards per tr, or use colspan="2" for one full-width card. -->
 <table>
+<tr>
+<td colspan="2" valign="top">
+<h3><a href="https://github.com/sindredg/k8-lab">Kubernetes platform &amp; AI security triage</a></h3>
+<p>A private GKE cluster serving public workloads. Keyless delivery, measured rollouts, failure drills, and an AI agent that triages security findings. 125 req/s across 8 Pods with no failures; connection failures during rollouts cut from 72 to 0.</p>
+<sub>Terraform, GKE, GitHub Actions, Cloud Armor, Vertex AI, Go</sub><br><br>
+</td>
+</tr>
 <tr>
 <td width="50%" valign="top">
 <img src="assets/identity.svg" alt="" width="100%">

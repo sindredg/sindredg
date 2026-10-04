@@ -4,9 +4,9 @@ Edit README.md directly in GitHub or locally. No action or build step is needed;
 
 ## Update the in-progress project
 
-The project under construction sits between IN-PROGRESS:START and IN-PROGRESS:END: title, description, milestone graphic, status line, links, and stack.
+No project is in progress at the moment, so the README has no in-progress block. To add one, put a heading with assets/in-progress.svg, an in-progress anchor, and a navigation link back, and place the project between IN-PROGRESS:START and IN-PROGRESS:END: title, description, milestone graphic, status line, links, and stack.
 
-When a k8s-dr milestone completes, run `python3 scripts/progress-track.py N` from the repository root, where N is the number of completed milestones in k8s-dr's plan.md. It rewrites assets/k8s-dr-progress.svg. Update the status line under the graphic and the image alt text to match.
+For a project with milestones, `python3 scripts/progress-track.py N` from the repository root draws the milestone graphic with N milestones complete. The script still holds the labels, region ranges, and output path of k8s-dr, which is finished; adapt them at the top of the script. Update the status line under the graphic and the image alt text to match.
 
 When the project finishes, move it into FEATURED or the archive, then delete the whole in-progress block, its heading and anchor, and the In progress navigation link. To feature a different ongoing project, replace the block; drop the graphic or adapt the labels and region ranges at the top of the script.
 
