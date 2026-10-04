@@ -10,13 +10,9 @@ For a project with milestones, `python3 scripts/progress-track.py N` from the re
 
 When the project finishes, move it into FEATURED or the archive, then delete the whole in-progress block, its heading and anchor, and the In progress navigation link. To feature a different ongoing project, replace the block; drop the graphic or adapt the labels and region ranges at the top of the script.
 
-## Switch the main project
+## Feature a main project
 
-Everything specific to the main project is between FEATURED:START and FEATURED:END: status, title, description, links, results, stack, and expandable details. Replace that content together. The header and section graphics are independent of the project and need no edits.
-
-The results row, stack paragraph, and details block are optional. Delete an entire optional element when it is not relevant. A project without measurements still works with just its title, description, and link inside the first table.
-
-To keep the former featured project, add its title, repository link, and short description as a Markdown bullet inside ARCHIVE:START. Remove any old archive entry for the new featured project if it would be redundant.
+No project is featured at the moment; every project is a card under Selected work. To feature one, add a heading with assets/featured.svg, a featured-project anchor, and a navigation link, then a block between FEATURED:START and FEATURED:END with the status, title, description, links, and an optional results row, stack paragraph, and details block.
 
 ## Change the selected cards
 
@@ -24,7 +20,7 @@ Between SELECTED:START and SELECTED:END, each td element is a self-contained car
 
 For an odd number of cards, put the final card alone in a tr and change its td attributes to colspan="2" valign="top" (remove width="50%"). This gives it a full-width row instead of an empty placeholder. Remove an entire tr when deleting both its cards.
 
-The four small illustrations are reusable motifs: assets/identity.svg, assets/network.svg, assets/hybrid.svg, and assets/containers.svg. They contain no project names or links. Choose any motif for a new card, or remove the img element entirely. Keep decorative image alt text empty; the card title supplies its accessible name.
+The six small illustrations are reusable motifs: assets/recovery.svg, assets/cluster.svg, assets/identity.svg, assets/network.svg, assets/hybrid.svg, and assets/containers.svg. They contain no project names or links. Choose any motif for a new card, or remove the img element entirely. Keep decorative image alt text empty; the card title supplies its accessible name.
 
 ## Change the archive
 
