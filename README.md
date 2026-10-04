@@ -6,8 +6,6 @@
   <a href="https://github.com/sindredg?tab=repositories"><img src="assets/nav-repositories.svg" alt="All repositories" height="40"></a>
 </p>
 
-<p align="center"><sub>Cloud infrastructure and the systems around it.</sub></p>
-
 <br>
 
 <!-- Editing guide: docs/updating-profile.md. All project content is inside the marked blocks. -->
