@@ -3,7 +3,7 @@
 Usage: python3 scripts/preview-animation.py assets/header.svg [SECONDS ...] [-o OUT.png]
 
 Each frame shows the animation paused at that many seconds. With no times given,
-eight evenly spaced frames across --cycle seconds (default 18) are drawn. Needs a
+eight evenly spaced frames across --cycle seconds (default 24) are drawn. Needs a
 Chromium or Chrome binary: set CHROME, or have one on PATH or in the Playwright cache.
 """
 import argparse, glob, os, re, shutil, subprocess, sys, tempfile
@@ -12,7 +12,7 @@ p = argparse.ArgumentParser()
 p.add_argument("svg")
 p.add_argument("times", nargs="*", type=float)
 p.add_argument("-o", "--out")
-p.add_argument("--cycle", type=float, default=18)
+p.add_argument("--cycle", type=float, default=24)
 a = p.parse_args()
 
 times = a.times or [a.cycle * i / 8 for i in range(8)]
