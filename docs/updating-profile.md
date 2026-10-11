@@ -20,7 +20,7 @@ Between SELECTED:START and SELECTED:END, each td element is a self-contained car
 
 For an odd number of cards, put the final card alone in a tr and change its td attributes to colspan="2" valign="top" (remove width="50%"). This gives it a full-width row instead of an empty placeholder. Remove an entire tr when deleting both its cards.
 
-The six small illustrations are reusable motifs: assets/recovery.svg, assets/cluster.svg, assets/identity.svg, assets/network.svg, assets/hybrid.svg, and assets/containers.svg. They contain no project names or links. Choose any motif for a new card, or remove the img element entirely. Keep decorative image alt text empty; the card title supplies its accessible name.
+The seven small illustrations are reusable motifs: assets/guard.svg, assets/recovery.svg, assets/cluster.svg, assets/identity.svg, assets/network.svg, assets/hybrid.svg, and assets/containers.svg. They contain no project names or links. Choose any motif for a new card, or remove the img element entirely. Keep decorative image alt text empty; the card title supplies its accessible name.
 
 ## Change the archive
 

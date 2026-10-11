@@ -16,44 +16,44 @@
 <table>
 <tr>
 <td width="50%" valign="top">
+<img src="assets/guard.svg" alt="" width="100%">
+<h3><a href="https://github.com/sindredg/ai-security-platform">AI security operations platform</a></h3>
+<p>Self-hosted AI workers that investigate security findings and propose fixes. Isolated platform and target networks, no public addresses, and a single egress point. In progress.</p>
+<sub>Azure, Terraform, K3s, self-hosted LLM</sub><br><br>
+</td>
+<td width="50%" valign="top">
 <img src="assets/recovery.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/k8s-dr">Kubernetes disaster recovery</a></h3>
 <p>Recovering a stateful service after losing a region. Three drills rebuilt a kubeadm cluster from code in a second region and restored an offsite backup in under 20 minutes.</p>
 <sub>Google Cloud, Terraform, Ansible, Flux</sub><br><br>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 <img src="assets/cluster.svg" alt="" width="100%">
-<h3><a href="https://github.com/sindredg/k8-lab">Kubernetes platform</a></h3>
+<h3><a href="https://github.com/sindredg/k8-lab">Private GKE platform</a></h3>
 <p>A private GKE cluster serving public workloads, with keyless delivery, measured rollouts, failure drills, and an AI agent that triages security findings.</p>
 <sub>GKE, Terraform, GitHub Actions</sub><br><br>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 <img src="assets/identity.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/cross-cloud-entra-aws">Entra ID → AWS</a></h3>
 <p>Workforce identity across clouds. Federation, SCIM provisioning, and governed access to AWS.</p>
 <sub>Entra ID, AWS, Terraform</sub><br><br>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 <img src="assets/network.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/hybrid-network-az">Azure hybrid networking</a></h3>
 <p>Hub-and-spoke networking with an encrypted cross-premises tunnel, private endpoints, and two-way DNS.</p>
 <sub>Azure, VPN, Private Link</sub><br><br>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 <img src="assets/hybrid.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/two-site-hybrid-identity">Two-site hybrid identity</a></h3>
 <p>A two-site Active Directory forest synced to Entra ID, with hybrid endpoints and policy-enforced security baselines.</p>
 <sub>AD DS, Entra ID, PowerShell</sub><br><br>
-</td>
-<td width="50%" valign="top">
-<img src="assets/containers.svg" alt="" width="100%">
-<h3><a href="https://github.com/sindredg/container-app-in-azure">Azure Container Apps</a></h3>
-<p>A public web tier and private API, with passwordless image pulls, scale-to-zero, and automated delivery.</p>
-<sub>Terraform, containers, CI/CD</sub><br><br>
 </td>
 </tr>
 </table>
@@ -63,6 +63,7 @@
 <details>
 <summary><strong>Other projects</strong></summary>
 
+- **[Azure Container Apps](https://github.com/sindredg/container-app-in-azure)**: A public web tier and private API, with passwordless image pulls, scale-to-zero, and automated delivery.
 - **[AI security triage](https://github.com/sindredg/ai-k8s)**: Rules, scoped model access, and an auditable verdict ledger for cloud security findings.
 - **[Identity governance](https://github.com/sindredg/Access-Control-and-Identity-Governance)**: Conditional Access, just-in-time administration with PIM, and access reviews.
 - **[Grafana SSO & provisioning](https://github.com/sindredg/entra-app-roles-sso-scim)**: OIDC sign-in, app-role mapping, and a custom SCIM bridge.
