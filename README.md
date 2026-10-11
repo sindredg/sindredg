@@ -67,7 +67,6 @@
 - **[AI security triage](https://github.com/sindredg/ai-k8s)**: Rules, scoped model access, and an auditable verdict ledger for cloud security findings.
 - **[Two-site hybrid identity](https://github.com/sindredg/two-site-hybrid-identity)**: A two-site Active Directory forest synced to Entra ID, with hybrid endpoints and policy-enforced security baselines.
 - **[Grafana SSO & provisioning](https://github.com/sindredg/entra-app-roles-sso-scim)**: OIDC sign-in, app-role mapping, and a custom SCIM bridge.
-- **[Sky](https://github.com/sindredg/sky)**: An application deployed on the Kubernetes platform.
 - **[OAuth 2.0 in .NET](https://github.com/sindredg/app-registrations-and-JWT-tokens)**: API authorization through scopes, app roles, groups, and token claims.
 - **[Azure MCP & RBAC](https://github.com/sindredg/claude-azure-mcp-rbac-design)**: Scoped, read-only Azure access for Claude, enforced through Azure RBAC.
 
