@@ -16,22 +16,24 @@ No project is featured at the moment; every project is a card under Selected wor
 
 ## Change the selected cards
 
-Between SELECTED:START and SELECTED:END, each td element is a self-contained card: decorative image, linked title, description, and stack. Edit those fields or copy a whole td block. Two cards sit inside each tr row.
+Between SELECTED:START and SELECTED:END, each td element is a self-contained card: decorative image, linked title, description, and stack. Edit those fields or copy a whole td block. Each row of two cards is its own table, because GitHub shades every second row of a longer table.
 
-For an odd number of cards, put the final card alone in a tr and change its td attributes to colspan="2" valign="top" (remove width="50%"). This gives it a full-width row instead of an empty placeholder. Remove an entire tr when deleting both its cards.
+For an odd number of cards, put the final card alone in its own table and remove width="50%" from its td. This gives it a full-width row instead of an empty placeholder. Remove an entire table when deleting both its cards.
 
-The eight small illustrations are reusable motifs: assets/guard.svg, assets/governance.svg, assets/recovery.svg, assets/cluster.svg, assets/identity.svg, assets/network.svg, assets/hybrid.svg, and assets/containers.svg. They contain no project names or links. Choose any motif for a new card, or remove the img element entirely. Keep decorative image alt text empty; the card title supplies its accessible name.
+The eight small illustrations are reusable motifs: assets/guard.svg, assets/governance.svg, assets/recovery.svg, assets/cluster.svg, assets/identity.svg, assets/network.svg, assets/hybrid.svg, and assets/containers.svg. They contain no project names or links. Lavender motifs stand for identity and security, green ones for infrastructure. Choose any motif for a new card, or remove the img element entirely. Keep decorative image alt text empty; the card title supplies its accessible name.
 
 ## Change the archive
 
 Between ARCHIVE:START and ARCHIVE:END, add, remove, or reorder individual Markdown bullets. To remove the archive entirely, delete everything between those markers, including the details wrapper. No empty slots or visible editing instructions are needed.
 
-If you remove both the selected cards and the archive, remove the Selected work heading, its named anchor, and the Selected work navigation link as well.
+If you remove both the selected cards and the archive, remove the Selected work banner as well.
+
+With one section there is no navigation button for it; the only button is All repositories. If you add a second section, give each an anchor and a button in the style of assets/nav-repositories.svg.
 
 ## Preview before saving
 
 - Use GitHub's Preview tab; expand Under the hood and Other projects.
-- Check that the navigation jumps to the right sections and all project links work.
+- Check that all project links work.
 - Check the status, metrics, and technology labels belong to the new project.
 - Check narrow and wide layouts. Keep card descriptions short so paired cards remain balanced.
 - After changing the header animation, `python3 scripts/preview-animation.py assets/header.svg 3 7 11.2 13 15 18 21.2` draws those moments of the cycle into one PNG and prints its path. It needs a Chromium or Chrome binary.
