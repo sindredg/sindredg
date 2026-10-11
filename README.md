@@ -32,13 +32,13 @@
 <td width="50%" valign="top">
 <img src="assets/cluster.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/k8-lab">Private GKE platform</a></h3>
-<p>A private GKE cluster serving public workloads, with keyless delivery, measured rollouts, failure drills, and an AI agent that triages security findings.</p>
+<p>A private GKE cluster that served public workloads, built with Terraform and deployed from GitHub Actions without a stored key. An AI agent triaged its security findings.</p>
 <sub>GKE, Terraform, GitHub Actions</sub><br><br>
 </td>
 <td width="50%" valign="top">
 <img src="assets/identity.svg" alt="" width="100%">
-<h3><a href="https://github.com/sindredg/cross-cloud-entra-aws">Entra ID → AWS</a></h3>
-<p>Workforce identity across clouds. Federation, SCIM provisioning, and governed access to AWS.</p>
+<h3><a href="https://github.com/sindredg/cross-cloud-entra-aws">Entra ID federation to AWS</a></h3>
+<p>Workforce access to AWS managed from Entra ID: SAML sign-in, SCIM provisioning, access packages with approval and expiry, and joiner, mover, and leaver workflows.</p>
 <sub>Entra ID, AWS, Terraform</sub><br><br>
 </td>
 </tr>
@@ -46,13 +46,13 @@
 <td width="50%" valign="top">
 <img src="assets/network.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/hybrid-network-az">Azure hybrid networking</a></h3>
-<p>Hub-and-spoke networking with an encrypted cross-premises tunnel, private endpoints, and two-way DNS.</p>
+<p>A hub-and-spoke network joined to an external network by an IPsec tunnel, with a hub firewall, private endpoints, and DNS that resolves in both directions.</p>
 <sub>Azure, VPN, Private Link</sub><br><br>
 </td>
 <td width="50%" valign="top">
 <img src="assets/governance.svg" alt="" width="100%">
-<h3><a href="https://github.com/sindredg/Access-Control-and-Identity-Governance">Identity governance</a></h3>
-<p>Governing access to an application with Entra ID: Conditional Access and risk-based policies, just-in-time administration with PIM, and recurring access reviews.</p>
+<h3><a href="https://github.com/sindredg/Access-Control-and-Identity-Governance">Entra ID access governance</a></h3>
+<p>Conditional Access and risk-based policies, just-in-time administration with PIM, and recurring access reviews for a self-hosted Grafana.</p>
 <sub>Entra ID, Conditional Access, PIM</sub><br><br>
 </td>
 </tr>
@@ -63,12 +63,12 @@
 <details>
 <summary><strong>Other projects</strong></summary>
 
-- **[Azure Container Apps](https://github.com/sindredg/container-app-in-azure)**: A public web tier and private API, with passwordless image pulls, scale-to-zero, and automated delivery.
-- **[AI security triage](https://github.com/sindredg/ai-k8s)**: Rules, scoped model access, and an auditable verdict ledger for cloud security findings.
-- **[Two-site hybrid identity](https://github.com/sindredg/two-site-hybrid-identity)**: A two-site Active Directory forest synced to Entra ID, with hybrid endpoints and policy-enforced security baselines.
-- **[Grafana SSO & provisioning](https://github.com/sindredg/entra-app-roles-sso-scim)**: OIDC sign-in, app-role mapping, and a custom SCIM bridge.
-- **[OAuth 2.0 in .NET](https://github.com/sindredg/app-registrations-and-JWT-tokens)**: API authorization through scopes, app roles, groups, and token claims.
-- **[Azure MCP & RBAC](https://github.com/sindredg/claude-azure-mcp-rbac-design)**: Scoped, read-only Azure access for Claude, enforced through Azure RBAC.
+- **[Web app on Azure Container Apps](https://github.com/sindredg/container-app-in-azure)**: A public web tier and an internal API, built with Terraform. Images are pulled with a managed identity, so no registry password exists.
+- **[AI security triage](https://github.com/sindredg/ai-k8s)**: The triage agent for the private GKE platform: rules first, then a model with scoped access, and an auditable ledger of verdicts.
+- **[Two-site hybrid identity](https://github.com/sindredg/two-site-hybrid-identity)**: An Active Directory forest in Azure synced to Entra ID, serving a branch office in a second region, with hybrid-joined clients hardened through Group Policy and Windows LAPS.
+- **[Grafana SSO & provisioning](https://github.com/sindredg/entra-app-roles-sso-scim)**: OIDC sign-in to a self-hosted Grafana, with Entra groups mapped to Grafana roles and accounts created and disabled through a custom SCIM bridge.
+- **[OAuth 2.0 in .NET](https://github.com/sindredg/app-registrations-and-JWT-tokens)**: A protected API, a web client, and a daemon registered in Entra ID, with the API enforcing scopes and app roles from token claims.
+- **[Read-only Azure access for Claude](https://github.com/sindredg/claude-azure-mcp-rbac-design)**: A dedicated service principal with Reader on one resource group, used through the Azure MCP Server.
 
 </details>
 <!-- ARCHIVE:END -->
