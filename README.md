@@ -18,7 +18,7 @@
 <td width="50%" valign="top">
 <img src="assets/guard.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/ai-security-platform">AI security operations platform</a></h3>
-<p>Self-hosted AI workers investigate security findings on a service they don't run, and propose fixes that are rehearsed before a human approves them. In progress: the network foundation and threat model are done.</p>
+<p>Self-hosted AI workers investigate security findings on a service they don't run, and propose fixes that are rehearsed before a human approves them. In progress.</p>
 <sub>Azure, Terraform, K3s</sub><br><br>
 </td>
 <td width="50%" valign="top">
