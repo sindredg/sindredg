@@ -18,7 +18,7 @@
 <td width="50%" valign="top">
 <img src="assets/guard.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/ai-security-platform">AI security operations platform</a></h3>
-<p>Infrastructure for self-hosted AI workers that investigate security findings and propose rehearsed fixes for human approval. Platform and targets run in isolated networks with separate identities, no public addresses, and a single egress point. In progress.</p>
+<p>Self-hosted AI workers that investigate security findings and propose fixes. Isolated platform and target networks, no public addresses, and a single egress point. In progress.</p>
 <sub>Azure, Terraform, K3s, self-hosted LLM</sub><br><br>
 </td>
 <td width="50%" valign="top">
