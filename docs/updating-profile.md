@@ -34,7 +34,8 @@ If you remove both the selected cards and the archive, remove the Selected work 
 - Check that the navigation jumps to the right sections and all project links work.
 - Check the status, metrics, and technology labels belong to the new project.
 - Check narrow and wide layouts. Keep card descriptions short so paired cards remain balanced.
+- After changing the header animation, `python3 scripts/preview-animation.py assets/header.svg 4.8 8.1 9.6 11.5 14.6 17.2` draws those moments of the cycle into one PNG and prints its path. It needs a Chromium or Chrome binary.
 
 Section headings carry a small status mark: a half-filled circle for work in progress and a filled circle for completed work. The graphics are local SVG files, with no remote badge service or font dependency. The header animation honors reduced-motion preferences. Project changes require editing only README.md.
 
-The header shows only the name, with a decorative abstract animation and no technology-specific labels. Over an 18-second cycle, a control plane sends work to three nodes; the lower node fails, its workloads move to the other two, and after it recovers the load rebalances. Reduced-motion preferences show a static, healthy cluster. There are no labels or live-status indicators to update.
+The header shows only the name, with a decorative abstract animation and no technology-specific labels. Three nodes send heartbeats to a control plane, which flashes as each one lands. Over an 18-second cycle the lower node fails and its heartbeats stop; the control plane notices the missed heartbeat, marks the node, and reschedules its workloads onto the other two. When the node reports again, the mark clears and workloads are scheduled back onto it. The timeline is in a comment in the style block of assets/header.svg. Reduced-motion preferences show a static, healthy cluster. There are no labels or live-status indicators to update.
