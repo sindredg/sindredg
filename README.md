@@ -50,10 +50,10 @@
 <sub>Azure, VPN, Private Link</sub><br><br>
 </td>
 <td width="50%" valign="top">
-<img src="assets/hybrid.svg" alt="" width="100%">
-<h3><a href="https://github.com/sindredg/two-site-hybrid-identity">Two-site hybrid identity</a></h3>
-<p>A two-site Active Directory forest synced to Entra ID, with hybrid endpoints and policy-enforced security baselines.</p>
-<sub>AD DS, Entra ID, PowerShell</sub><br><br>
+<img src="assets/governance.svg" alt="" width="100%">
+<h3><a href="https://github.com/sindredg/Access-Control-and-Identity-Governance">Identity governance</a></h3>
+<p>Governing access to an application with Entra ID: Conditional Access and risk-based policies, just-in-time administration with PIM, and recurring access reviews.</p>
+<sub>Entra ID, Conditional Access, PIM</sub><br><br>
 </td>
 </tr>
 </table>
@@ -65,7 +65,7 @@
 
 - **[Azure Container Apps](https://github.com/sindredg/container-app-in-azure)**: A public web tier and private API, with passwordless image pulls, scale-to-zero, and automated delivery.
 - **[AI security triage](https://github.com/sindredg/ai-k8s)**: Rules, scoped model access, and an auditable verdict ledger for cloud security findings.
-- **[Identity governance](https://github.com/sindredg/Access-Control-and-Identity-Governance)**: Conditional Access, just-in-time administration with PIM, and access reviews.
+- **[Two-site hybrid identity](https://github.com/sindredg/two-site-hybrid-identity)**: A two-site Active Directory forest synced to Entra ID, with hybrid endpoints and policy-enforced security baselines.
 - **[Grafana SSO & provisioning](https://github.com/sindredg/entra-app-roles-sso-scim)**: OIDC sign-in, app-role mapping, and a custom SCIM bridge.
 - **[Sky](https://github.com/sindredg/sky)**: An application deployed on the Kubernetes platform.
 - **[OAuth 2.0 in .NET](https://github.com/sindredg/app-registrations-and-JWT-tokens)**: API authorization through scopes, app roles, groups, and token claims.
