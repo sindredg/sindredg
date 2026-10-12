@@ -64,10 +64,6 @@
 
 - **[Azure Container Apps](https://github.com/sindredg/container-app-in-azure)**: A public web tier and an internal API, built with Terraform. Images are pulled with a managed identity, so no registry password exists.
 - **[AI Security Triage](https://github.com/sindredg/ai-k8s)**: The triage agent for the private GKE platform: rules first, then a model with scoped access, and an auditable ledger of verdicts.
-- **[Two-Site Hybrid Identity](https://github.com/sindredg/two-site-hybrid-identity)**: An Active Directory forest in Azure synced to Entra ID, serving a branch office in a second region, with hybrid-joined clients hardened through Group Policy and Windows LAPS.
-- **[Grafana OIDC & SCIM](https://github.com/sindredg/entra-app-roles-sso-scim)**: OIDC sign-in to a self-hosted Grafana, with Entra groups mapped to Grafana roles and accounts created and disabled through a custom SCIM bridge.
-- **[OAuth 2.0 in .NET](https://github.com/sindredg/app-registrations-and-JWT-tokens)**: A protected API, a web client, and a daemon registered in Entra ID, with the API enforcing scopes and app roles from token claims.
-- **[Azure Access for Claude](https://github.com/sindredg/claude-azure-mcp-rbac-design)**: A dedicated service principal with Reader on one resource group, used through the Azure MCP Server.
 
 </details>
 <!-- ARCHIVE:END -->
