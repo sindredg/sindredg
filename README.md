@@ -19,7 +19,7 @@
 <td width="50%" valign="top">
 <img src="assets/recovery.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/k8s-dr">Kubernetes Disaster Recovery</a></h3>
-<p>Recovering a stateful service after losing a region. Three drills rebuilt a kubeadm cluster from code in a second region and restored an offsite backup in under 20 minutes.</p>
+<p>Recovering a stateful service after losing a region. Gitea and PostgreSQL run on a kubeadm cluster built on VMs, and a drill rebuilds it from code in a second region and restores an offsite backup. Actively building.</p>
 <sub>Google Cloud, Terraform, Ansible, Flux</sub><br><br>
 </td>
 </tr>
