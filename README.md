@@ -63,7 +63,8 @@
 <summary><strong>Other projects</strong></summary>
 
 - **[Azure Container Apps](https://github.com/sindredg/container-app-in-azure)**: A public web tier and an internal API, built with Terraform. Images are pulled with a managed identity, so no registry password exists.
-- **[AI Security Triage](https://github.com/sindredg/ai-k8s)**: The triage agent for the private GKE platform: rules first, then a model with scoped access, and an auditable ledger of verdicts.
+- **[Two-Site Hybrid Identity](https://github.com/sindredg/two-site-hybrid-identity)**: An Active Directory forest across two Azure regions, synced to Entra ID, with hybrid join, Windows LAPS, security baselines, and tiered administration.
+- **[Entra ID SSO and SCIM for Grafana](https://github.com/sindredg/entra-app-roles-sso-scim)**: Entra ID as the identity provider for a self-hosted Grafana: OIDC sign-in, groups mapped to Grafana roles through app roles, and SCIM provisioning through a custom bridge.
 
 </details>
 <!-- ARCHIVE:END -->
