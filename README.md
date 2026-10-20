@@ -18,9 +18,9 @@
 </td>
 <td width="50%" valign="top">
 <img src="assets/recovery.svg" alt="" width="100%">
-<h3><a href="https://github.com/sindredg/k8s-dr">Kubernetes Disaster Recovery</a></h3>
-<p>Recovering a stateful service after losing a region. Gitea and PostgreSQL run on a kubeadm cluster built on VMs, and a drill rebuilds it from code in a second region and restores an offsite backup. Actively building.</p>
-<sub>Google Cloud, Terraform, Ansible, Flux</sub><br><br>
+<h3><a href="https://github.com/sindredg/k8s-dr">Automated Regional Disaster Recovery</a></h3>
+<p>Automated outage detection, infrastructure rebuilds, backup restoration, and DNS cutover for Gitea and PostgreSQL on self-managed Kubernetes. Validated in two consecutive unattended drills: recovery within 36 minutes, with under 11 minutes of data loss.</p>
+<sub>Google Cloud, Terraform, Ansible, Flux, GitHub Actions</sub><br><br>
 </td>
 </tr>
 </table>
