@@ -17,7 +17,7 @@
 <sub>Azure, Terraform, K3s, self-hosted LLM</sub><br><br>
 </td>
 <td width="50%" valign="top">
-<img src="assets/recovery.svg" alt="" width="100%">
+<img src="assets/hindcast.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/hindcast">Hindcast</a></h3>
 <p>Reconstructs infrastructure outages from public status updates, using AI to build a timeline, assess likely causes, and identify what remains unknown. Findings cite their evidence and are evaluated against the provider's later incident report. <strong>Actively building.</strong></p>
 <sub>Azure AI Foundry, OpenAI models, Azure AI Search, Python, Container Apps, Bicep</sub><br><br>
