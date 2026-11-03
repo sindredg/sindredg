@@ -49,16 +49,6 @@
 <sub>Entra ID, AWS, Terraform</sub><br><br>
 </td>
 <td width="50%" valign="top">
-<img src="assets/network.svg" alt="" width="100%">
-<h3><a href="https://github.com/sindredg/hybrid-network-az">Azure Hybrid Network</a></h3>
-<p>A hub-and-spoke network joined to an external network by an IPsec tunnel, with a hub firewall, private endpoints, and DNS that resolves in both directions.</p>
-<sub>Azure, VPN, Private Link</sub><br><br>
-</td>
-</tr>
-</table>
-<table>
-<tr>
-<td valign="top">
 <img src="assets/governance.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/Access-Control-and-Identity-Governance">Access Governance</a></h3>
 <p>Conditional Access and risk-based policies, just-in-time administration with PIM, and recurring access reviews for a self-hosted Grafana.</p>
@@ -72,6 +62,7 @@
 <details>
 <summary><strong>Other projects</strong></summary>
 
+- **[Azure Hybrid Network](https://github.com/sindredg/hybrid-network-az)**: A hub-and-spoke network joined to an external network by an IPsec tunnel, with a hub firewall, private endpoints, and DNS that resolves in both directions.
 - **[Azure Container Apps](https://github.com/sindredg/container-app-in-azure)**: A public web tier and an internal API, built with Terraform. Images are pulled with a managed identity, so no registry password exists.
 - **[Two-Site Hybrid Identity](https://github.com/sindredg/two-site-hybrid-identity)**: An Active Directory forest across two Azure regions, synced to Entra ID, with hybrid join, Windows LAPS, security baselines, and tiered administration.
 - **[Entra ID SSO and SCIM for Grafana](https://github.com/sindredg/entra-app-roles-sso-scim)**: Entra ID as the identity provider for a self-hosted Grafana: OIDC sign-in, groups mapped to Grafana roles through app roles, and SCIM provisioning through a custom bridge.
