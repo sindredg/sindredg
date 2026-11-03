@@ -18,37 +18,47 @@
 </td>
 <td width="50%" valign="top">
 <img src="assets/recovery.svg" alt="" width="100%">
-<h3><a href="https://github.com/sindredg/k8s-dr">Automated Regional Disaster Recovery</a></h3>
-<p>Automated outage detection, infrastructure rebuilds, backup restoration, and DNS cutover for Gitea and PostgreSQL on self-managed Kubernetes. Validated in two consecutive unattended drills: recovery within 36 minutes, with under 11 minutes of data loss.</p>
-<sub>Google Cloud, Terraform, Ansible, Flux, GitHub Actions</sub><br><br>
+<h3><a href="https://github.com/sindredg/hindcast">Hindcast</a></h3>
+<p>Reconstructs infrastructure outages from public status updates, using AI to build a timeline, assess likely causes, and identify what remains unknown. Findings cite their evidence and are evaluated against the provider's later incident report. <strong>Actively building.</strong></p>
+<sub>Azure AI Foundry, OpenAI models, Azure AI Search, Python, Container Apps, Bicep</sub><br><br>
 </td>
 </tr>
 </table>
 <table>
 <tr>
+<td width="50%" valign="top">
+<img src="assets/recovery.svg" alt="" width="100%">
+<h3><a href="https://github.com/sindredg/k8s-dr">Automated Regional Disaster Recovery</a></h3>
+<p>Automated outage detection, infrastructure rebuilds, backup restoration, and DNS cutover for Gitea and PostgreSQL on self-managed Kubernetes. Validated in two consecutive unattended drills: recovery within 36 minutes, with under 11 minutes of data loss.</p>
+<sub>Google Cloud, Terraform, Ansible, Flux, GitHub Actions</sub><br><br>
+</td>
 <td width="50%" valign="top">
 <img src="assets/cluster.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/k8-lab">Private GKE Cluster</a></h3>
 <p>A private GKE cluster that served public workloads, built with Terraform and deployed from GitHub Actions without a stored key. An AI agent triaged its security findings.</p>
 <sub>GKE, Terraform, GitHub Actions</sub><br><br>
 </td>
+</tr>
+</table>
+<table>
+<tr>
 <td width="50%" valign="top">
 <img src="assets/identity.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/cross-cloud-entra-aws">Entra ID to AWS</a></h3>
 <p>Workforce access to AWS managed from Entra ID: SAML sign-in, SCIM provisioning, access packages with approval and expiry, and joiner, mover, and leaver workflows.</p>
 <sub>Entra ID, AWS, Terraform</sub><br><br>
 </td>
-</tr>
-</table>
-<table>
-<tr>
 <td width="50%" valign="top">
 <img src="assets/network.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/hybrid-network-az">Azure Hybrid Network</a></h3>
 <p>A hub-and-spoke network joined to an external network by an IPsec tunnel, with a hub firewall, private endpoints, and DNS that resolves in both directions.</p>
 <sub>Azure, VPN, Private Link</sub><br><br>
 </td>
-<td width="50%" valign="top">
+</tr>
+</table>
+<table>
+<tr>
+<td valign="top">
 <img src="assets/governance.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/Access-Control-and-Identity-Governance">Access Governance</a></h3>
 <p>Conditional Access and risk-based policies, just-in-time administration with PIM, and recurring access reviews for a self-hosted Grafana.</p>
