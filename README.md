@@ -11,16 +11,16 @@
 <table>
 <tr>
 <td width="50%" valign="top">
+<img src="assets/hindcast.svg" alt="" width="100%">
+<h3><a href="https://github.com/sindredg/hindcast">Hindcast: Evidence-Based Outage Reconstruction</a></h3>
+<p>An AI agent reconstructs cloud outages from public status updates and charts: likely causes, open questions, a citation on every claim, and an abstention where the evidence stops. 60 reconstructions were scored against the providers’ later postmortems, which the investigator never sees; five more were sealed by hash before any cause was published, and the first reveal scored 1.00.</p>
+<sub>Azure AI Foundry, OpenAI models, Claude API, Azure AI Search, Python, Container Apps, Bicep</sub><br><br>
+</td>
+<td width="50%" valign="top">
 <img src="assets/guard.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/ai-security-platform">AI Security Platform</a></h3>
 <p>A self-hosted AI security platform with isolated agent execution, scoped evidence access, and human-approved remediation. Built on private Azure infrastructure and tested through permission changes, rollback, prompt injection, and containment drills.</p>
 <sub>Azure, Terraform, K3s, self-hosted LLM</sub><br><br>
-</td>
-<td width="50%" valign="top">
-<img src="assets/hindcast.svg" alt="" width="100%">
-<h3><a href="https://github.com/sindredg/hindcast">Hindcast: Evidence-Based Outage Reconstruction</a></h3>
-<p>AI agents reconstruct cloud outages from public status updates and traffic charts, building a timeline, assessing likely causes, and identifying what remains unknown. Findings cite their evidence and are evaluated against the provider’s later incident report, which the investigating agent never sees. <strong>Actively building.</strong></p>
-<sub>Azure AI Foundry, OpenAI models, Claude API, Azure AI Search, Python, Container Apps, Bicep</sub><br><br>
 </td>
 </tr>
 </table>
