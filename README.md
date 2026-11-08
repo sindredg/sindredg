@@ -13,7 +13,7 @@
 <td width="50%" valign="top">
 <img src="assets/hindcast.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/hindcast">Hindcast: Evidence-Based Outage Reconstruction</a></h3>
-<p>An AI agent reconstructs cloud outages from public status updates and charts, citing evidence for every claim and saying when the evidence runs out. Each result is scored against the provider’s later postmortem, which the agent never sees.</p>
+<p>An AI agent reconstructs cloud outages from public status updates and charts, citing evidence for every claim and reports when additional evidence is required. Each result is scored against the provider’s later postmortem, which the agent never sees during the investigations.</p>
 <sub>Azure AI Foundry, OpenAI models, Claude API, Azure AI Search, Python, Container Apps, Bicep</sub><br><br>
 </td>
 <td width="50%" valign="top">
