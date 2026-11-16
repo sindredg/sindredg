@@ -11,44 +11,54 @@
 <table>
 <tr>
 <td width="50%" valign="top">
+<img src="assets/agent-runtime.svg" alt="" width="100%">
+<h3><a href="https://github.com/sindredg/agent-runtime">Agent Runtime: Reliable Execution for AI Agents</a></h3>
+<p>Runs long-running AI agent jobs and records each step in Postgres. If a worker crashes, another resumes the job and checks whether an interrupted tool call took effect before retrying it. <em>Actively building and adding new features.</em></p>
+<sub>Python, PostgreSQL, Docker</sub><br><br>
+</td>
+<td width="50%" valign="top">
 <img src="assets/hindcast.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/hindcast">Hindcast: Evidence-Based Outage Reconstruction</a></h3>
 <p>An AI agent reconstructs cloud outages from public status updates and charts, citing evidence for every claim and reporting when additional evidence is required. Each result is scored against the provider’s later postmortem, which the agent never sees during the investigation.</p>
 <sub>Azure AI Foundry, OpenAI models, Claude API, Azure AI Search, Python, Container Apps, Bicep</sub><br><br>
 </td>
+</tr>
+</table>
+<table>
+<tr>
 <td width="50%" valign="top">
 <img src="assets/guard.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/ai-security-platform">AI Security Platform</a></h3>
 <p>A self-hosted AI security platform with isolated agent execution, scoped evidence access, and human-approved remediation. Built on private Azure infrastructure and tested through permission changes, rollback, prompt injection, and containment drills.</p>
 <sub>Azure, Terraform, K3s, self-hosted LLM</sub><br><br>
 </td>
-</tr>
-</table>
-<table>
-<tr>
 <td width="50%" valign="top">
 <img src="assets/recovery.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/k8s-dr">Automated Regional Disaster Recovery</a></h3>
 <p>Automated outage detection, infrastructure rebuilds, backup restoration, and DNS cutover for Gitea and PostgreSQL on self-managed Kubernetes. Validated in two consecutive unattended drills: recovery within 36 minutes, with under 11 minutes of data loss.</p>
 <sub>Google Cloud, Terraform, Ansible, Flux, GitHub Actions</sub><br><br>
 </td>
+</tr>
+</table>
+<table>
+<tr>
 <td width="50%" valign="top">
 <img src="assets/cluster.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/k8-lab">Private GKE Cluster</a></h3>
 <p>A private GKE cluster that served public workloads, built with Terraform and deployed from GitHub Actions without a stored key. An AI agent triaged its security findings.</p>
 <sub>GKE, Terraform, GitHub Actions</sub><br><br>
 </td>
-</tr>
-</table>
-<table>
-<tr>
 <td width="50%" valign="top">
 <img src="assets/identity.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/cross-cloud-entra-aws">Entra ID to AWS</a></h3>
 <p>Workforce access to AWS managed from Entra ID: SAML sign-in, SCIM provisioning, access packages with approval and expiry, and joiner, mover, and leaver workflows.</p>
 <sub>Entra ID, AWS, Terraform</sub><br><br>
 </td>
-<td width="50%" valign="top">
+</tr>
+</table>
+<table>
+<tr>
+<td valign="top">
 <img src="assets/governance.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/Access-Control-and-Identity-Governance">Access Governance</a></h3>
 <p>Conditional Access and risk-based policies, just-in-time administration with PIM, and recurring access reviews for a self-hosted Grafana.</p>
