@@ -13,8 +13,8 @@
 <td width="50%" valign="top">
 <img src="assets/agent-runtime.svg" alt="" width="100%">
 <h3><a href="https://github.com/sindredg/agent-runtime">Agent Runtime: Reliable Execution for AI Agents</a></h3>
-<p>Runs long-running AI agent jobs and records each step in Postgres. If a worker crashes, another resumes the job and checks whether an interrupted tool call took effect before retrying it. <em>Actively building and adding new features.</em></p>
-<sub>Python, PostgreSQL, Docker</sub><br><br>
+<p>Runs long-running AI agent jobs with crash recovery, sandboxed tool execution, and human approval for sensitive actions. Records each step in PostgreSQL so another worker can resume interrupted jobs, with checks before retrying tool calls. <em>Actively building and adding new features.</em></p>
+<sub>Python, PostgreSQL, Docker, Claude API</sub><br><br>
 </td>
 <td width="50%" valign="top">
 <img src="assets/hindcast.svg" alt="" width="100%">
